@@ -21,7 +21,7 @@
 
 **Rövid leírás** *(2–4 mondat: milyen üzleti/elemzési kérdést old meg a pipeline? Milyen forrásadatokból indul ki, és milyen eredményt produkál?)*
 
-> _Ide írja a leírást._ A tervezett pipeline youtube-ról és google-ról gyűjt valós statisztikákat, különböző usereknek. A userek vagy magánfelhasználók akiknek a rendelkezésre álló idejük alapján hozna létre egy megnézendő videók listát, azalapján hogy mennyi idejük van egy héten videót nézni, vagy KKV-knek hozna létre egy listát hogy a piacukon milyen trending videók vannak a héten amik alapján fejleszthetik a marketingjüket. A pipeline valós friss adatokat a YouTube Data API-t és Google Trends segítségével valósítom meg.
+ A pipeline célja, hogy YouTube Data API és Google Trends adatokból heti szintű közösségimédia-trend elemzést készítsen. A rendszer különböző témákhoz vagy piaci kategóriákhoz kapcsolódó videókat, nézettségi és engagement mutatókat, valamint keresési trendeket gyűjt, majd ezeket egy elemzésre kész adattárházba tölti. Az eredmény egy lekérdezhető adatmodell, amely alkalmas arra, hogy feltárja, mely témák és videók trendelnek adott időszakban, illetve hogyan kapcsolódnak ezek különböző felhasználói vagy üzleti profilokhoz.
 
 ---
 
@@ -29,14 +29,14 @@
 
 | Elem | Tervezett megoldás / eszköz |
 |---|---|
-| **Adatforrások** *(min. 2)* | Youtube Data API, Google Trends, User CSV fájl |
-| **Feldolgozási mód** | Batch |
+| **Adatforrások** *(min. 2)* | Youtube Data API, Google Trends adatkinyerés pythreads segítségével, User CSV fájl |
+| **Feldolgozási mód** | Batch Daily |
 | **Landing zone** *(nyers tároló)* | MinIO |
-| **Adatmodell típusa** | pl. Csillag séma – 1 ténytábla + 2 dimenziótábla |
-| **Adattárház / adatplatform** | pl. PostgreSQL, DuckDB, Snowflake |
-| **Transzformáció** | pl. dbt, Pandas, Spark SQL |
-| **Orchestration eszköz** | pl. Apache Airflow, Dagster, Prefect |
-| **Infrastruktúra** | pl. Docker Compose, Terraform + AWS |
-| **Adatkiszolgálás** | pl. SQL nézetek, Metabase dashboard, REST API |
+| **Adatmodell típusa** | Csillag séma 1 fact table: video_daily_metrics, 5 dim table: dim_vide, dim_chanel, dim_topic, dim_date, dim_user_Profile|
+| **Adattárház / adatplatform** | SQL, pandas|
+| **Transzformáció** | Pandas, PostgreSQL |
+| **Orchestration eszköz** | Apache Airflow |
+| **Infrastruktúra** | Docker Compose  |
+| **Adatkiszolgálás** | SQL nézetek, Metabase dashboard |
 
 ---
