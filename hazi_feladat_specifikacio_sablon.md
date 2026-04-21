@@ -29,10 +29,10 @@
 
 | Elem | Tervezett megoldás / eszköz |
 |---|---|
-| **Adatforrások** *(min. 2)* | Youtube Data API, Google Trends adatkinyerés pythreads segítségével, User CSV fájl |
+| **Adatforrások** *(min. 2)* | Youtube Data API, Google Trends adatkinyerés pytrrends segítségével, User CSV fájl |
 | **Feldolgozási mód** | Batch Daily |
 | **Landing zone** *(nyers tároló)* | MinIO |
-| **Adatmodell típusa** | Csillag séma 1 fact table: video_daily_metrics, 5 dim table: dim_vide, dim_chanel, dim_topic, dim_date, dim_user_Profile|
+| **Adatmodell típusa** | Csillag séma 1 fact table: video_daily_metrics, 5 dim table: dim_video, dim_channel, dim_topic, dim_date, dim_user_profile|
 | **Adattárház / adatplatform** | SQL, pandas|
 | **Transzformáció** | Pandas, PostgreSQL |
 | **Orchestration eszköz** | Apache Airflow |
