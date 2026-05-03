@@ -1,6 +1,6 @@
-import os
 import json
-from datetime import datetime
+import os
+from datetime import UTC, datetime
 from pathlib import Path
 
 import requests
@@ -10,17 +10,24 @@ from dotenv import load_dotenv
 load_dotenv()
 
 NEWS_API_KEY = os.getenv("NEWS_API_KEY")
+NEWS_QUERY = os.getenv("NEWS_QUERY", "data engineering OR airflow OR python")
+NEWS_LANGUAGE = os.getenv("NEWS_LANGUAGE", "en")
+NEWS_PAGE_SIZE = int(os.getenv("NEWS_PAGE_SIZE", "50"))
+
 OUTPUT_DIR = Path("data/raw/news")
 
 
-def extract_news(query: str, page_size: int = 10):
+def extract_news(query: str, language: str = "en", page_size: int = 50):
+    if not NEWS_API_KEY:
+        raise ValueError("NEWS_API_KEY is missing from .env")
+
     url = "https://newsapi.org/v2/everything"
 
     params = {
         "q": query,
+        "language": language,
         "pageSize": page_size,
         "sortBy": "publishedAt",
-        "language": "en",
         "apiKey": NEWS_API_KEY,
     }
 
@@ -31,19 +38,21 @@ def extract_news(query: str, page_size: int = 10):
 
 
 def main():
-    topics = ["python", "data engineering", "artificial intelligence"]
-
-    run_date = datetime.utcnow().strftime("%Y-%m-%d")
+    run_date = datetime.now(UTC).strftime("%Y-%m-%d")
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    for topic in topics:
-        articles = extract_news(topic)
-        output_file = OUTPUT_DIR / f"{run_date}_{topic.replace(' ', '_')}.json"
+    articles = extract_news(
+        query=NEWS_QUERY,
+        language=NEWS_LANGUAGE,
+        page_size=NEWS_PAGE_SIZE,
+    )
 
-        with open(output_file, "w", encoding="utf-8") as f:
-            json.dump(articles, f, ensure_ascii=False, indent=2)
+    output_file = OUTPUT_DIR / f"{run_date}_news.json"
 
-        print(f"Saved {len(articles)} articles to {output_file}")
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(articles, f, ensure_ascii=False, indent=2)
+
+    print(f"Saved {len(articles)} articles to {output_file}")
 
 
 if __name__ == "__main__":
