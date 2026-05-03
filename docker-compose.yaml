@@ -45,7 +45,9 @@ services:
       "
 
   airflow-init:
-    image: apache/airflow:2.9.1
+    build:
+      context: .
+      dockerfile: docker/airflow/Dockerfile
     container_name: airflow_init
     depends_on:
       postgres:
@@ -56,10 +58,14 @@ services:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
       AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      MINIO_ENDPOINT: http://minio:9000
     user: "${AIRFLOW_UID}:0"
     volumes:
       - ./dags:/opt/airflow/dags
       - ./scripts:/opt/airflow/scripts
+      - ./data:/opt/airflow/data
     entrypoint: /bin/bash
     command:
       - -c
@@ -71,10 +77,12 @@ services:
           --firstname Airflow \
           --lastname Admin \
           --role Admin \
-          --email admin@example.com
+          --email admin@example.com || true
 
   airflow-webserver:
-    image: apache/airflow:2.9.1
+    build:
+      context: .
+      dockerfile: docker/airflow/Dockerfile
     container_name: airflow_webserver
     depends_on:
       postgres:
@@ -89,16 +97,22 @@ services:
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
       AIRFLOW__CORE__LOAD_EXAMPLES: "False"
       AIRFLOW__WEBSERVER__DEFAULT_UI_TIMEZONE: Europe/Budapest
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      MINIO_ENDPOINT: http://minio:9000
     user: "${AIRFLOW_UID}:0"
     volumes:
       - ./dags:/opt/airflow/dags
       - ./scripts:/opt/airflow/scripts
+      - ./data:/opt/airflow/data
     ports:
       - "8080:8080"
     command: webserver
 
   airflow-scheduler:
-    image: apache/airflow:2.9.1
+    build:
+      context: .
+      dockerfile: docker/airflow/Dockerfile
     container_name: airflow_scheduler
     depends_on:
       postgres:
@@ -112,10 +126,14 @@ services:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
       AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      MINIO_ENDPOINT: http://minio:9000
     user: "${AIRFLOW_UID}:0"
     volumes:
       - ./dags:/opt/airflow/dags
       - ./scripts:/opt/airflow/scripts
+      - ./data:/opt/airflow/data
     command: scheduler
 
   metabase:

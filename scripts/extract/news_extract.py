@@ -7,14 +7,15 @@ import requests
 from dotenv import load_dotenv
 
 
-load_dotenv()
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+OUTPUT_DIR = PROJECT_ROOT / "data" / "raw" / "news"
+
+load_dotenv(PROJECT_ROOT / ".env")
 
 NEWS_API_KEY = os.getenv("NEWS_API_KEY")
 NEWS_QUERY = os.getenv("NEWS_QUERY", "data engineering OR airflow OR python")
 NEWS_LANGUAGE = os.getenv("NEWS_LANGUAGE", "en")
 NEWS_PAGE_SIZE = int(os.getenv("NEWS_PAGE_SIZE", "50"))
-
-OUTPUT_DIR = Path("data/raw/news")
 
 
 def extract_news(query: str, language: str = "en", page_size: int = 50):
