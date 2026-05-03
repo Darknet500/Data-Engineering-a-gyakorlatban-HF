@@ -1,0 +1,794 @@
+[
+  {
+    "kind": "youtube#video",
+    "etag": "1MqQwmLRRFgMRPHJGibsvVK2UEs",
+    "id": "K5KVEU3aaeQ",
+    "snippet": {
+      "publishedAt": "2025-02-12T12:30:31Z",
+      "channelId": "UCWv7vMbMWH4-V0ZXdmDpPBA",
+      "title": "Python Full Course for Beginners",
+      "description": "Master Python from scratch 🚀 No fluff—just clear, practical coding skills to kickstart your journey! \n\n🚀 Want to dive deeper?\n- Check out my complete Python mastery course: https://mosh.link/python-course\n- Subscribe for more awesome Python content: https://goo.gl/6PYaGF\n\n🔗 Related videos \nhttps://youtu.be/yVl_G-F7m8c?si=aoIiT6CyaRRfBsRM\n\n✋ Stay connected:\n- Full Courses: https://codewithmosh.com\n- Twitter: https://twitter.com/moshhamedani\n- Facebook: https://www.facebook.com/programmingwithmosh/\n- Instagram: https://www.instagram.com/codewithmosh.official/\n- LinkedIn: https://www.linkedin.com/school/codewithmosh/\n\n📖 Table of Content\n0:00:00 Introduction\n0:00:56 What is Python?\n0:04:11 Installing Python\n0:05:36 Python Interpreter\n0:07:30 Code Editors\n0:08:49 Your First Python Program\n0:12:25 Python Extension\n0:14:26 Linting Python Code\n0:18:40 Formatting Python Code\n0:22:51 Running Python Code\n0:24:30 Python Implementations\n0:26:59 How Python Code is Executed\n0:29:45 Quiz\n0:31:17 Python Mastery Course\n0:31:44 Variables\n0:34:48 Variable Names\n0:37:51 Strings\n0:43:20 Escape Sequences\n0:46:01 Formatted Strings\n0:48:09 String Methods\n0:54:03 Numbers\n0:56:50 Working With Numbers\n0:58:59 Type Conversion\n1:04:03 Quiz\n1:06:43 Comparison Operators\n1:08:46 Conditional Statements\n1:12:56 Ternary Operator\n1:15:04 Logical Operators\n1:19:07 Short-circuit Evaluations\n1:21:13 Chaining Comparison Operators\n1:22:35 Quiz\n1:24:18 For Loops\n1:27:56 For..Else\n1:30:42 Nested Loops\n1:33:26 Iterables\n1:36:34 While Loops\n1:41:33 Infinite Loops\n1:43:10 Exercise\n1:45:13 Defining Functions\n1:47:37 Arguments\n1:49:57 Types of Functions\n1:53:59 Keyword Arguments\n1:55:59 Default Arguments\n1:57:34 xargs\n\n#Python #AI #MachineLearning #WebDevelopment",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/K5KVEU3aaeQ/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/K5KVEU3aaeQ/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/K5KVEU3aaeQ/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/K5KVEU3aaeQ/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/K5KVEU3aaeQ/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "Programming with Mosh",
+      "tags": [
+        "python full course",
+        "python full course for begginers",
+        "python beginners course",
+        "python complete course",
+        "python full tutorial",
+        "python tutorial",
+        "python programming tutorial",
+        "python tutorial for beginners",
+        "learn python",
+        "python basics",
+        "programming tutorial",
+        "python crash course",
+        "complete python course",
+        "python",
+        "python course",
+        "python programming",
+        "python for everybody",
+        "programming with mosh",
+        "mosh hamedani",
+        "code with mosh"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "Python Full Course for Beginners",
+        "description": "Master Python from scratch 🚀 No fluff—just clear, practical coding skills to kickstart your journey! \n\n🚀 Want to dive deeper?\n- Check out my complete Python mastery course: https://mosh.link/python-course\n- Subscribe for more awesome Python content: https://goo.gl/6PYaGF\n\n🔗 Related videos \nhttps://youtu.be/yVl_G-F7m8c?si=aoIiT6CyaRRfBsRM\n\n✋ Stay connected:\n- Full Courses: https://codewithmosh.com\n- Twitter: https://twitter.com/moshhamedani\n- Facebook: https://www.facebook.com/programmingwithmosh/\n- Instagram: https://www.instagram.com/codewithmosh.official/\n- LinkedIn: https://www.linkedin.com/school/codewithmosh/\n\n📖 Table of Content\n0:00:00 Introduction\n0:00:56 What is Python?\n0:04:11 Installing Python\n0:05:36 Python Interpreter\n0:07:30 Code Editors\n0:08:49 Your First Python Program\n0:12:25 Python Extension\n0:14:26 Linting Python Code\n0:18:40 Formatting Python Code\n0:22:51 Running Python Code\n0:24:30 Python Implementations\n0:26:59 How Python Code is Executed\n0:29:45 Quiz\n0:31:17 Python Mastery Course\n0:31:44 Variables\n0:34:48 Variable Names\n0:37:51 Strings\n0:43:20 Escape Sequences\n0:46:01 Formatted Strings\n0:48:09 String Methods\n0:54:03 Numbers\n0:56:50 Working With Numbers\n0:58:59 Type Conversion\n1:04:03 Quiz\n1:06:43 Comparison Operators\n1:08:46 Conditional Statements\n1:12:56 Ternary Operator\n1:15:04 Logical Operators\n1:19:07 Short-circuit Evaluations\n1:21:13 Chaining Comparison Operators\n1:22:35 Quiz\n1:24:18 For Loops\n1:27:56 For..Else\n1:30:42 Nested Loops\n1:33:26 Iterables\n1:36:34 While Loops\n1:41:33 Infinite Loops\n1:43:10 Exercise\n1:45:13 Defining Functions\n1:47:37 Arguments\n1:49:57 Types of Functions\n1:53:59 Keyword Arguments\n1:55:59 Default Arguments\n1:57:34 xargs\n\n#Python #AI #MachineLearning #WebDevelopment"
+      },
+      "defaultAudioLanguage": "en"
+    },
+    "contentDetails": {
+      "duration": "PT2H2M21S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "false",
+      "licensedContent": true,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "6172865",
+      "likeCount": "144187",
+      "favoriteCount": "0",
+      "commentCount": "3774"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "qVCSl0u286GxTbX7jU_HrhwWfqg",
+    "id": "ix9cRaBkVe0",
+    "snippet": {
+      "publishedAt": "2024-08-20T13:00:54Z",
+      "channelId": "UC4SVo0Ue36XCfOyb5Lh1viQ",
+      "title": "Python Full Course for free 🐍",
+      "description": "#python #tutorial #beginners \nPython tutorial for beginners' full course 2024\n\n*Learn Python in 1 HOUR* ⏱ : https://www.youtube.com/watch?v=8KCuHHeC_M0\n*My original Python 12 Hour course* 🐍 :  https://www.youtube.com/watch?v=XKHEtdqhLK8\n*Full Python playlist* 📃: https://www.youtube.com/watch?v=Sg4GMVMdOPo&list=PLZPZq0r_RZOOkUQbat8LyQii36cJf2SWT\n\n                           [⭐ = project]\n#1   (00:00:00) python tutorial for beginners 🐍\n#2   (00:05:49) variables ❎\n#3   (00:16:05) type casting 💱\n#4   (00:21:15) user input ⌨️\n#5   (00:32:42) ⭐ madlibs game 📖\n#6   (00:37:55) arithmetic & math 📐\n#7   (00:51:46) if statements 🤔\n#8   (01:00:06) ⭐ calculator program 🧮\n#9   (01:05:59) ⭐ weight conversion program 🏋️\n#10 (01:09:59) ⭐ temperature conversion program 🌡️\n#11 (01:13:58) logical operators 🌦️\n#12 (01:21:28) conditional expressions ❓\n#13 (01:27:03) string methods 〰️\n#14 (01:39:08) string indexing ✂️\n#15 (01:46:35) format specifiers 💬\n#16 (01:51:55) while loops ♾️\n#17 (01:58:53) ⭐ compound interest calculator 💵\n#18 (02:06:28) for loops 🔁\n#19 (02:11:33) ⭐ countdown timer program ⌛\n#20 (02:17:28) nested loops ➿\n#21 (02:23:03) lists, sets, and tuples 🍎\n#22 (02:38:08) ⭐ shopping cart program 🛒\n#23 (02:45:21) 2D collections ⬜\n#24 (02:53:59) ⭐ quiz game 💯\n#25 (03:03:27) dictionaries 📙\n#26 (03:11:33) ⭐ concession stand program 🍿\n#27 (03:19:42) random numbers 🎲\n#28 (03:24:16) ⭐ number guessing game 🔢\n#29 (03:32:37) ⭐ rock, paper, scissors game 🗿\n#30 (03:42:06) ⭐ dice roller program ⚂\n#31 (03:52:12) functions 📞\n#32 (04:02:50) default arguments 👍\n#33 (04:08:56) keyword arguments 🗝️\n#34 (04:15:40) *args & **kwargs 📦\n#35 (04:30:33) iterables 🔂\n#36 (04:37:04) membership operators 🔎\n#37 (04:45:56) list comprehensions 📃\n#38 (04:56:17) match-case statements 📆\n#39 (05:02:13) modules 📨\n#40 (05:08:51) scope resolution 🔬\n#41 (05:14:22) if name == 'main': 📥\n#42 (05:23:34) ⭐ banking program 💰\n#43 (05:38:34) ⭐ slot machine 🎰\n#44 (05:58:45) ⭐ encryption program 🔐\n#45 (06:07:26) ⭐ hangman game 🕺\n#46 (06:32:32) python object oriented programming 🚗\n#47 (06:44:50) class variables 🎓\n#48 (06:53:06) inheritance 👨‍👦‍👦\n#49 (07:00:02) multiple inheritance 🐟\n#50 (07:08:04) super() 🔴\n#51 (07:21:10) polymorphism 🎭\n#52 (07:29:15) duck typing 🦆\n#53 (07:33:34) static methods ⚡\n#54 (07:39:31) class methods 🏫\n#55 (07:46:16) magic methods 🌟\n#56 (07:59:51) @property ⚙️\n#57 (08:07:33) decorators 🎊\n#58 (08:14:57) exception handling 🚦\n#59 (08:20:46) file detection 🕵️‍♂️\n#60 (08:27:47) writing files ✍\n#61 (08:41:33) reading files 🔍\n#62 (08:48:29) dates & times 📅\n#63 (08:54:46) ⭐ alarm clock ⏰\n#64 (09:05:03) multithreading 🧵\n#65 (09:13:45) request API data ↩️\n#66 (09:22:19) PyQt5 GUI intro 🖥️\n#67 (09:31:27) PyQt5 labels 🏷️\n#68 (09:40:23) PyQt5 images 📷\n#69 (09:46:28) PyQt5 layout managers 🧲\n#70 (09:53:07) PyQt5 buttons 🛎️\n#71 (10:00:12) PyQt5 checkboxes ✅\n#72 (10:06:42) PyQt5 radio buttons 🔘\n#73 (10:15:55) PyQt5 line edits 💬\n#74 (10:21:55) PyQt5 CSS styles 🎨\n#75 (10:32:48) ⭐ digital clock program 🕒\n#76 (10:48:38) ⭐ stopwatch program ⏱\n#77 (11:06:05) ⭐ weather API app ☀️\n\nPython Interpreter: https://www.python.org/\nPyCharm IDE: https://www.jetbrains.com/pycharm/\n\n*Copyright Disclaimer*:\nThis video is the intellectual property of Bro Code. All rights reserved. No part of this video may be reproduced, distributed, or transmitted in any form or by any means, including but not limited to recording, uploading, or other electronic or mechanical methods, without my written permission, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/ix9cRaBkVe0/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/ix9cRaBkVe0/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/ix9cRaBkVe0/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/ix9cRaBkVe0/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/ix9cRaBkVe0/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "Bro Code",
+      "tags": [
+        "Python tutorial",
+        "python course",
+        "python programming",
+        "python",
+        "python tutorial",
+        "python language",
+        "python full course",
+        "learn python",
+        "learn python programming",
+        "python tutorial for beginners",
+        "python programming tutorial",
+        "python programming language",
+        "software development",
+        "programming tutorial"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "Python Full Course for free 🐍",
+        "description": "#python #tutorial #beginners \nPython tutorial for beginners' full course 2024\n\n*Learn Python in 1 HOUR* ⏱ : https://www.youtube.com/watch?v=8KCuHHeC_M0\n*My original Python 12 Hour course* 🐍 :  https://www.youtube.com/watch?v=XKHEtdqhLK8\n*Full Python playlist* 📃: https://www.youtube.com/watch?v=Sg4GMVMdOPo&list=PLZPZq0r_RZOOkUQbat8LyQii36cJf2SWT\n\n                           [⭐ = project]\n#1   (00:00:00) python tutorial for beginners 🐍\n#2   (00:05:49) variables ❎\n#3   (00:16:05) type casting 💱\n#4   (00:21:15) user input ⌨️\n#5   (00:32:42) ⭐ madlibs game 📖\n#6   (00:37:55) arithmetic & math 📐\n#7   (00:51:46) if statements 🤔\n#8   (01:00:06) ⭐ calculator program 🧮\n#9   (01:05:59) ⭐ weight conversion program 🏋️\n#10 (01:09:59) ⭐ temperature conversion program 🌡️\n#11 (01:13:58) logical operators 🌦️\n#12 (01:21:28) conditional expressions ❓\n#13 (01:27:03) string methods 〰️\n#14 (01:39:08) string indexing ✂️\n#15 (01:46:35) format specifiers 💬\n#16 (01:51:55) while loops ♾️\n#17 (01:58:53) ⭐ compound interest calculator 💵\n#18 (02:06:28) for loops 🔁\n#19 (02:11:33) ⭐ countdown timer program ⌛\n#20 (02:17:28) nested loops ➿\n#21 (02:23:03) lists, sets, and tuples 🍎\n#22 (02:38:08) ⭐ shopping cart program 🛒\n#23 (02:45:21) 2D collections ⬜\n#24 (02:53:59) ⭐ quiz game 💯\n#25 (03:03:27) dictionaries 📙\n#26 (03:11:33) ⭐ concession stand program 🍿\n#27 (03:19:42) random numbers 🎲\n#28 (03:24:16) ⭐ number guessing game 🔢\n#29 (03:32:37) ⭐ rock, paper, scissors game 🗿\n#30 (03:42:06) ⭐ dice roller program ⚂\n#31 (03:52:12) functions 📞\n#32 (04:02:50) default arguments 👍\n#33 (04:08:56) keyword arguments 🗝️\n#34 (04:15:40) *args & **kwargs 📦\n#35 (04:30:33) iterables 🔂\n#36 (04:37:04) membership operators 🔎\n#37 (04:45:56) list comprehensions 📃\n#38 (04:56:17) match-case statements 📆\n#39 (05:02:13) modules 📨\n#40 (05:08:51) scope resolution 🔬\n#41 (05:14:22) if name == 'main': 📥\n#42 (05:23:34) ⭐ banking program 💰\n#43 (05:38:34) ⭐ slot machine 🎰\n#44 (05:58:45) ⭐ encryption program 🔐\n#45 (06:07:26) ⭐ hangman game 🕺\n#46 (06:32:32) python object oriented programming 🚗\n#47 (06:44:50) class variables 🎓\n#48 (06:53:06) inheritance 👨‍👦‍👦\n#49 (07:00:02) multiple inheritance 🐟\n#50 (07:08:04) super() 🔴\n#51 (07:21:10) polymorphism 🎭\n#52 (07:29:15) duck typing 🦆\n#53 (07:33:34) static methods ⚡\n#54 (07:39:31) class methods 🏫\n#55 (07:46:16) magic methods 🌟\n#56 (07:59:51) @property ⚙️\n#57 (08:07:33) decorators 🎊\n#58 (08:14:57) exception handling 🚦\n#59 (08:20:46) file detection 🕵️‍♂️\n#60 (08:27:47) writing files ✍\n#61 (08:41:33) reading files 🔍\n#62 (08:48:29) dates & times 📅\n#63 (08:54:46) ⭐ alarm clock ⏰\n#64 (09:05:03) multithreading 🧵\n#65 (09:13:45) request API data ↩️\n#66 (09:22:19) PyQt5 GUI intro 🖥️\n#67 (09:31:27) PyQt5 labels 🏷️\n#68 (09:40:23) PyQt5 images 📷\n#69 (09:46:28) PyQt5 layout managers 🧲\n#70 (09:53:07) PyQt5 buttons 🛎️\n#71 (10:00:12) PyQt5 checkboxes ✅\n#72 (10:06:42) PyQt5 radio buttons 🔘\n#73 (10:15:55) PyQt5 line edits 💬\n#74 (10:21:55) PyQt5 CSS styles 🎨\n#75 (10:32:48) ⭐ digital clock program 🕒\n#76 (10:48:38) ⭐ stopwatch program ⏱\n#77 (11:06:05) ⭐ weather API app ☀️\n\nPython Interpreter: https://www.python.org/\nPyCharm IDE: https://www.jetbrains.com/pycharm/\n\n*Copyright Disclaimer*:\nThis video is the intellectual property of Bro Code. All rights reserved. No part of this video may be reproduced, distributed, or transmitted in any form or by any means, including but not limited to recording, uploading, or other electronic or mechanical methods, without my written permission, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law."
+      },
+      "defaultAudioLanguage": "en"
+    },
+    "contentDetails": {
+      "duration": "PT12H",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "false",
+      "licensedContent": true,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "9608240",
+      "likeCount": "299087",
+      "favoriteCount": "0",
+      "commentCount": "18308"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "Klyaebio21obgtM6pVlKcjwGmpQ",
+    "id": "kqtD5dpn9C8",
+    "snippet": {
+      "publishedAt": "2020-09-16T13:00:20Z",
+      "channelId": "UCWv7vMbMWH4-V0ZXdmDpPBA",
+      "title": "Python for Beginners - Learn Coding with Python in 1 Hour",
+      "description": "Learn Python basics in just 1 hour! Perfect for beginners interested in AI and coding. ⚡ Plus, get 6 months of PyCharm FREE with the coupon in the description!\n\n🚀 Want to dive deeper? Check out my Complete Python Mastery course: \n- Full course: https://mosh.link/python-course\n- Subscribe for more Python tutorials like this: https://goo.gl/6PYaGF\n\n📕 Get the FREE goodies:\n- Python cheat sheet: https://mosh.link/python-cheatsheet\n- Get 6 months of PyCharm for free with this coupon code: MOSH_YOUTUBE - Redeem it at: https://jb.gg/redeem\n\n✋ Stay connected:\n- Twitter: https://twitter.com/moshhamedani\n- Facebook: https://www.facebook.com/programmingwithmosh/\n- Instagram: https://www.instagram.com/codewithmosh.official/\n- LinkedIn: https://www.linkedin.com/school/codewithmosh/\n\n⭐ Related tutorials\nhttps://youtu.be/yVl_G-F7m8c?si=11emtFyDccTKCGn7\n\n📖 TABLE OF CONTENT\n0:00:00 Introduction \n0:00:30 What You Can Do With Python \n0:01:15 Your First Python Program \n0:05:30 Variables\n0:09:08 Receiving Input\n0:10:48 Type Conversion\n0:18:49 Strings\n0:23:41 Arithmetic Operators \n0:25:59 Operator Precedence \n0:27:11 Comparison Operators \n0:28:52 Logical Operators\n0:31:06 If Statements\n0:36:16 Exercise\n0:41:42 While Loops\n0:45:11 Lists\n0:48:47 List Methods\n0:52:16 For Loops\n0:54:54 The range() Function \n0:57:43 Tuples\n\n#Python #AI #MachineLearning #WebDevelopment",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/kqtD5dpn9C8/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/kqtD5dpn9C8/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/kqtD5dpn9C8/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/kqtD5dpn9C8/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/kqtD5dpn9C8/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "Programming with Mosh",
+      "tags": [
+        "code with mosh",
+        "introduction to python",
+        "learn python",
+        "learn python programming",
+        "mosh hamedani",
+        "programming",
+        "programming with mosh",
+        "python",
+        "python 2020",
+        "python 3",
+        "python basics",
+        "python course",
+        "python crash course",
+        "python for beginners",
+        "python from scratch",
+        "python programming",
+        "python tutorial",
+        "python tutorial for beginners",
+        "web development"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "Python for Beginners - Learn Coding with Python in 1 Hour",
+        "description": "Learn Python basics in just 1 hour! Perfect for beginners interested in AI and coding. ⚡ Plus, get 6 months of PyCharm FREE with the coupon in the description!\n\n🚀 Want to dive deeper? Check out my Complete Python Mastery course: \n- Full course: https://mosh.link/python-course\n- Subscribe for more Python tutorials like this: https://goo.gl/6PYaGF\n\n📕 Get the FREE goodies:\n- Python cheat sheet: https://mosh.link/python-cheatsheet\n- Get 6 months of PyCharm for free with this coupon code: MOSH_YOUTUBE - Redeem it at: https://jb.gg/redeem\n\n✋ Stay connected:\n- Twitter: https://twitter.com/moshhamedani\n- Facebook: https://www.facebook.com/programmingwithmosh/\n- Instagram: https://www.instagram.com/codewithmosh.official/\n- LinkedIn: https://www.linkedin.com/school/codewithmosh/\n\n⭐ Related tutorials\nhttps://youtu.be/yVl_G-F7m8c?si=11emtFyDccTKCGn7\n\n📖 TABLE OF CONTENT\n0:00:00 Introduction \n0:00:30 What You Can Do With Python \n0:01:15 Your First Python Program \n0:05:30 Variables\n0:09:08 Receiving Input\n0:10:48 Type Conversion\n0:18:49 Strings\n0:23:41 Arithmetic Operators \n0:25:59 Operator Precedence \n0:27:11 Comparison Operators \n0:28:52 Logical Operators\n0:31:06 If Statements\n0:36:16 Exercise\n0:41:42 While Loops\n0:45:11 Lists\n0:48:47 List Methods\n0:52:16 For Loops\n0:54:54 The range() Function \n0:57:43 Tuples\n\n#Python #AI #MachineLearning #WebDevelopment"
+      },
+      "defaultAudioLanguage": "en-US"
+    },
+    "contentDetails": {
+      "duration": "PT1H6S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "false",
+      "licensedContent": true,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "24163615",
+      "likeCount": "549951",
+      "favoriteCount": "0",
+      "commentCount": "27553"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "Z7_kMJ91a5kmq5apYYRa16kDMP0",
+    "id": "_uQrJ0TkZlc",
+    "snippet": {
+      "publishedAt": "2019-02-18T15:00:08Z",
+      "channelId": "UCWv7vMbMWH4-V0ZXdmDpPBA",
+      "title": "Python Full Course for Beginners",
+      "description": "Learn Python for AI, machine learning, and web development with this beginner-friendly course! 🚀 Get 6 months of PyCharm FREE with the coupon in the description!\n\n🚀 Want to dive deeper?\n- Check out my Python mastery course: https://mosh.link/python-course\n- Subscribe for more awesome Python content: https://goo.gl/6PYaGF\n\n🔗 Related videos \nhttps://youtu.be/yVl_G-F7m8c?si=aoIiT6CyaRRfBsRM\n\n👉 New version available Watch here: https://youtu.be/kqtD5dpn9C8\n\n📕 Get the FREE goodies:\n- Python cheat sheet: https://mosh.link/python-cheatsheet\n- Supplementary materials (spreadsheet): https://github.com/mosh-hamedani/python-supplementary-materials\n- Get 6 months of PyCharm for free with this coupon code: MOSH_YOUTUBE - Redeem it at: https://jb.gg/redeem\n\n✋ Stay connected:\n- Twitter: https://twitter.com/moshhamedani\n- Facebook: https://www.facebook.com/programmingwithmosh/\n- Instagram: https://www.instagram.com/codewithmosh.official/\n- LinkedIn: https://www.linkedin.com/school/codewithmosh/\n\n⭐ My favorite Python books\n- Python Crash Course: https://amzn.to/2GqMdjG\n- Automate the Boring Stuff with Python: https://amzn.to/2N71d6S\n- A Smarter Way to Learn Python: https://amzn.to/2UZa6lE\n- Machine Learning for Absolute Beginners: https://amzn.to/2Gs0koL\n- Hands-on Machine Learning with scikit-learn and TensorFlow: https://amzn.to/2IdUuJy\n\n📖 TABLE OF CONTENT\n00:00:00 Introduction\n00:01:49 Installing Python 3\n00:06:10 Your First Python Program\n00:08:11 How Python Code Gets Executed \n00:11:24 How Long It Takes To Learn Python \n00:13:03 Variables\n00:18:21 Receiving Input\n00:22:16 Python Cheat Sheet\n00:22:46 Type Conversion\n00:29:31 Strings\n00:37:36 Formatted Strings\n00:40:50 String Methods\n00:48:33 Arithmetic Operations\n00:51:33 Operator Precedence\n00:55:04 Math Functions\n00:58:17 If Statements\n01:06:32 Logical Operators\n01:11:25 Comparison Operators\n01:16:17 Weight Converter Program \n01:20:43 While Loops\n01:24:07 Building a Guessing Game\n01:30:51 Building the Car Game\n01:41:48 For Loops\n01:47:46 Nested Loops\n01:55:50 Lists\n02:01:45 2D Lists\n02:05:11 My Complete Python Course \n02:06:00 List Methods\n02:13:25 Tuples\n02:15:34 Unpacking\n02:18:21 Dictionaries\n02:26:21 Emoji Converter\n02:30:31 Functions\n02:35:21 Parameters\n02:39:24 Keyword Arguments \n02:44:45 Return Statement\n02:48:55 Creating a Reusable Function \n02:53:42 Exceptions\n02:59:14 Comments\n03:01:46 Classes\n03:07:46 Constructors\n03:14:41 Inheritance\n03:19:33 Modules\n03:30:12 Packages\n03:36:22 Generating Random Values\n03:44:37 Working with Directories \n03:50:47 Pypi and Pip\n03:55:34 Project 1: Automation with Python\n04:10:22 Project 2: Machine Learning with Python \n04:58:37 Project 3: Building a Website with Django\n\n#Python #AI #MachineLearning #WebDevelopment",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/_uQrJ0TkZlc/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/_uQrJ0TkZlc/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/_uQrJ0TkZlc/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/_uQrJ0TkZlc/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/_uQrJ0TkZlc/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "Programming with Mosh",
+      "tags": [
+        "python tutorial",
+        "python",
+        "python for beginners",
+        "python tutorial for beginners",
+        "learn python",
+        "python crash course",
+        "python 2019",
+        "python tutorial for beginners full",
+        "python (programming language)",
+        "python basics",
+        "python course",
+        "python from scratch",
+        "python full course",
+        "python language",
+        "python programming",
+        "python programming language",
+        "python programming tutorial",
+        "getting started with python",
+        "learn python programming",
+        "web development",
+        "mosh hamedani",
+        "machine learning",
+        "python 2020"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "Python Full Course for Beginners",
+        "description": "Learn Python for AI, machine learning, and web development with this beginner-friendly course! 🚀 Get 6 months of PyCharm FREE with the coupon in the description!\n\n🚀 Want to dive deeper?\n- Check out my Python mastery course: https://mosh.link/python-course\n- Subscribe for more awesome Python content: https://goo.gl/6PYaGF\n\n🔗 Related videos \nhttps://youtu.be/yVl_G-F7m8c?si=aoIiT6CyaRRfBsRM\n\n👉 New version available Watch here: https://youtu.be/kqtD5dpn9C8\n\n📕 Get the FREE goodies:\n- Python cheat sheet: https://mosh.link/python-cheatsheet\n- Supplementary materials (spreadsheet): https://github.com/mosh-hamedani/python-supplementary-materials\n- Get 6 months of PyCharm for free with this coupon code: MOSH_YOUTUBE - Redeem it at: https://jb.gg/redeem\n\n✋ Stay connected:\n- Twitter: https://twitter.com/moshhamedani\n- Facebook: https://www.facebook.com/programmingwithmosh/\n- Instagram: https://www.instagram.com/codewithmosh.official/\n- LinkedIn: https://www.linkedin.com/school/codewithmosh/\n\n⭐ My favorite Python books\n- Python Crash Course: https://amzn.to/2GqMdjG\n- Automate the Boring Stuff with Python: https://amzn.to/2N71d6S\n- A Smarter Way to Learn Python: https://amzn.to/2UZa6lE\n- Machine Learning for Absolute Beginners: https://amzn.to/2Gs0koL\n- Hands-on Machine Learning with scikit-learn and TensorFlow: https://amzn.to/2IdUuJy\n\n📖 TABLE OF CONTENT\n00:00:00 Introduction\n00:01:49 Installing Python 3\n00:06:10 Your First Python Program\n00:08:11 How Python Code Gets Executed \n00:11:24 How Long It Takes To Learn Python \n00:13:03 Variables\n00:18:21 Receiving Input\n00:22:16 Python Cheat Sheet\n00:22:46 Type Conversion\n00:29:31 Strings\n00:37:36 Formatted Strings\n00:40:50 String Methods\n00:48:33 Arithmetic Operations\n00:51:33 Operator Precedence\n00:55:04 Math Functions\n00:58:17 If Statements\n01:06:32 Logical Operators\n01:11:25 Comparison Operators\n01:16:17 Weight Converter Program \n01:20:43 While Loops\n01:24:07 Building a Guessing Game\n01:30:51 Building the Car Game\n01:41:48 For Loops\n01:47:46 Nested Loops\n01:55:50 Lists\n02:01:45 2D Lists\n02:05:11 My Complete Python Course \n02:06:00 List Methods\n02:13:25 Tuples\n02:15:34 Unpacking\n02:18:21 Dictionaries\n02:26:21 Emoji Converter\n02:30:31 Functions\n02:35:21 Parameters\n02:39:24 Keyword Arguments \n02:44:45 Return Statement\n02:48:55 Creating a Reusable Function \n02:53:42 Exceptions\n02:59:14 Comments\n03:01:46 Classes\n03:07:46 Constructors\n03:14:41 Inheritance\n03:19:33 Modules\n03:30:12 Packages\n03:36:22 Generating Random Values\n03:44:37 Working with Directories \n03:50:47 Pypi and Pip\n03:55:34 Project 1: Automation with Python\n04:10:22 Project 2: Machine Learning with Python \n04:58:37 Project 3: Building a Website with Django\n\n#Python #AI #MachineLearning #WebDevelopment"
+      },
+      "defaultAudioLanguage": "en"
+    },
+    "contentDetails": {
+      "duration": "PT6H14M7S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "true",
+      "licensedContent": true,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "47603055",
+      "likeCount": "1246812",
+      "favoriteCount": "0",
+      "commentCount": "62207"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "iIxwRGstpqjymblMrKRMSxxv_gQ",
+    "id": "fWjsdhR3z3c",
+    "snippet": {
+      "publishedAt": "2021-05-26T12:32:40Z",
+      "channelId": "UCuudpdbKmQWq2PPzYgVCWlA",
+      "title": "Learn Python in Less than 10 Minutes for Beginners (Fast & Easy)",
+      "description": "In this crash course I'll be teaching you the basics of Python in less than 10 minutes. Python is super easy to learn compared to the other languages!\n\nDownload Python: https://www.python.org/\nDownload PyCharm: https://www.jetbrains.com/pycharm/download/",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/fWjsdhR3z3c/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/fWjsdhR3z3c/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/fWjsdhR3z3c/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/fWjsdhR3z3c/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/fWjsdhR3z3c/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "Indently",
+      "tags": [
+        "code palace",
+        "cde palace",
+        "code palce",
+        "palace code"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Learn Python in Less than 10 Minutes for Beginners (Fast & Easy)",
+        "description": "In this crash course I'll be teaching you the basics of Python in less than 10 minutes. Python is super easy to learn compared to the other languages!\n\nDownload Python: https://www.python.org/\nDownload PyCharm: https://www.jetbrains.com/pycharm/download/"
+      },
+      "defaultAudioLanguage": "en-GB"
+    },
+    "contentDetails": {
+      "duration": "PT10M30S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "false",
+      "licensedContent": true,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "1391877",
+      "likeCount": "32071",
+      "favoriteCount": "0",
+      "commentCount": "788"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "lTpmY3F38EbvgA3jdJCmDeDzLoY",
+    "id": "xAcTmDO6NTI",
+    "snippet": {
+      "publishedAt": "2024-04-11T14:01:57Z",
+      "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+      "title": "Lecture 1: Introduction to CS and Programming Using Python",
+      "description": "MIT 6.100L Introduction to CS and Programming using Python, Fall 2022\nInstructor: Ana Bell\n\nView the complete course: https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP62A-ynp6v6-LGBCzeH3VAQB\n\nAn introduction to what computation is, python basics, mathematical operations, and python variables and types. We explore python objects and python programs.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/xAcTmDO6NTI/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/xAcTmDO6NTI/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/xAcTmDO6NTI/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/xAcTmDO6NTI/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/xAcTmDO6NTI/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "MIT OpenCourseWare",
+      "tags": [
+        "computational thinking",
+        "computer science",
+        "introductory programming",
+        "python",
+        "python variables"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-US",
+      "localized": {
+        "title": "Lecture 1: Introduction to CS and Programming Using Python",
+        "description": "MIT 6.100L Introduction to CS and Programming using Python, Fall 2022\nInstructor: Ana Bell\n\nView the complete course: https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP62A-ynp6v6-LGBCzeH3VAQB\n\nAn introduction to what computation is, python basics, mathematical operations, and python variables and types. We explore python objects and python programs.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments."
+      },
+      "defaultAudioLanguage": "en-US"
+    },
+    "contentDetails": {
+      "duration": "PT1H3M30S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "true",
+      "licensedContent": false,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "1951687",
+      "likeCount": "43263",
+      "favoriteCount": "0",
+      "commentCount": "984"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "yONbicK1wgMjTh-Gn4xPjrBQnmM",
+    "id": "nluUYtejoIE",
+    "snippet": {
+      "publishedAt": "2024-06-21T07:55:33Z",
+      "channelId": "UCAy1PN6jrZXrGFg79WP_91A",
+      "title": "Python Basics: Your FIRST Program in Under a Minute! 🚀",
+      "description": "In this quick tutorial, I’ll show you how to write your very first line of Python code: the classic \"Hello, World!\" 🌍✨\n\nWhether you're a total beginner or brushing up on your basics, this video will get you started in under a minute. 🚀\n\n\n\nDon't forget to like, subscribe, and leave a comment on what you want to learn next! 🔥\n\nJoin me in the PROGRAMMER'S REALM!\n\n#Python #Programming #HelloWorld #PythonTutorial #LearnToCode #CodingForBeginners #TheProgrammersRealm",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/nluUYtejoIE/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/nluUYtejoIE/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/nluUYtejoIE/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/nluUYtejoIE/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/nluUYtejoIE/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "The Programmers Realm",
+      "tags": [
+        "python",
+        "programming",
+        "helloworld",
+        "pythontutorial",
+        "learntocode",
+        "codingforbeginners",
+        "theprogrammersrealm"
+      ],
+      "categoryId": "28",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "Python Basics: Your FIRST Program in Under a Minute! 🚀",
+        "description": "In this quick tutorial, I’ll show you how to write your very first line of Python code: the classic \"Hello, World!\" 🌍✨\n\nWhether you're a total beginner or brushing up on your basics, this video will get you started in under a minute. 🚀\n\n\n\nDon't forget to like, subscribe, and leave a comment on what you want to learn next! 🔥\n\nJoin me in the PROGRAMMER'S REALM!\n\n#Python #Programming #HelloWorld #PythonTutorial #LearnToCode #CodingForBeginners #TheProgrammersRealm"
+      },
+      "defaultAudioLanguage": "en"
+    },
+    "contentDetails": {
+      "duration": "PT25S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "true",
+      "licensedContent": false,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "1155949",
+      "likeCount": "15634",
+      "favoriteCount": "0",
+      "commentCount": "127"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "LmzIThjzcpwY1c7cn0aGd_CMSd4",
+    "id": "WCM65ION4nE",
+    "snippet": {
+      "publishedAt": "2024-01-25T09:38:59Z",
+      "channelId": "UCCQxtRfGA_PmixZxXiChLUA",
+      "title": "Python Syllabus | Python for Beginners | Complete Python Course #pythonlearning",
+      "description": "Learn Python for free from this own pace learning platform  https://cramming.arlarse.tech/c/python-for-beginner\n\n#python #pythontutorial #pythonprogramming #pythonforbeginner #coding #college #striver #dsa #codingtutorial #apnacollege",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/WCM65ION4nE/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/WCM65ION4nE/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/WCM65ION4nE/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/WCM65ION4nE/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/WCM65ION4nE/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "SHRAY SALVI",
+      "tags": [
+        "python programming language",
+        "programming",
+        "python for beginners",
+        "python",
+        "coding",
+        "new to programming",
+        "coding career",
+        "python tutorial",
+        "python course",
+        "free python course",
+        "python roadmap",
+        "python syllabus",
+        "apna college",
+        "learn python",
+        "python programming language full course",
+        "python programming language for beginners"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-IN",
+      "localized": {
+        "title": "Python Syllabus | Python for Beginners | Complete Python Course #pythonlearning",
+        "description": "Learn Python for free from this own pace learning platform  https://cramming.arlarse.tech/c/python-for-beginner\n\n#python #pythontutorial #pythonprogramming #pythonforbeginner #coding #college #striver #dsa #codingtutorial #apnacollege"
+      },
+      "defaultAudioLanguage": "hi"
+    },
+    "contentDetails": {
+      "duration": "PT5S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "false",
+      "licensedContent": false,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "1001428",
+      "likeCount": "9692",
+      "favoriteCount": "0",
+      "commentCount": "14"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "FTXupwtza9c6m4gxy8Tdo6aSH8U",
+    "id": "b093aqAZiPU",
+    "snippet": {
+      "publishedAt": "2021-03-25T10:00:08Z",
+      "channelId": "UCfJT_eYDTmDE-ovKaxVE1ig",
+      "title": "👩‍💻 Python for Beginners Tutorial",
+      "description": "In this step-by-step Python for beginner's tutorial, learn how you can get started programming in Python. In this video, I assume that you are completely new to programming. We'll walk through how to get Python, how to run your first code, and how to get an IDE (Integrated Development Environment) to help you code faster. You'll also learn about variables and how to set them. We'll look at functions, if statements, while and for loops, and we'll import libraries. At the end, we'll also look at how you can troubleshoot your code, for instance, when you run into syntax, semantic, or runtime errors. By the end, you'll know how to run code and you'll also understand the basic concepts of programming. My name is Kevin Stratvert and I'll be your guide to Python. I previously worked at Microsoft for 14 years.\n\n📚 RESOURCES\n- Get Python: https://www.python.org\n- Get Microsoft Visual Studio Code: https://code.visualstudio.com\n\n⌚ TIMESTAMPS\n0:00:00 Introduction\n0:01:25 Why program?\n0:02:18 Why Python?\n0:04:33 Get Python\n0:06:43 Run code in Python terminal\n0:09:13 Write code in a text editor like Notepad\n0:11:59 Get an IDE like Visual Studio Code for free\n0:14:20 Set up VS Code\n0:16:34 Run code in VS Code\n0:18:12 Work with numbers & operators\n0:22:24 Work with text / strings\n0:24:03 Comments\n0:25:37 Variables\n0:32:01 Conditional logic\n0:34:55 If, elif, & else statements\n0:41:14 Functions\n0:54:39 While & for loops\n0:59:00 Import libraries\n1:00:02 Troubleshooting code.  \n1:02:28 Wrap up\n   \n📺 RELATED VIDEOS\n- Playlist with all my videos on Python: https://youtube.com/playlist?list=PLlKpQrBME6xKNfcbz2nHyY_anC8BpXRnp\n\n🙌 SUPPORT THE CHANNEL\n- Hit the THANKS button in any video!\n- Amazon affiliate link: https://amzn.to/3kCP2yz (Purchasing through this link gives me a small commission to support videos on this channel -- the price to you is the same)\n\n🔽 CONNECT WITH ME\n- Official web site: http://www.kevinstratvert.com\n- LinkedIn: https://www.linkedin.com/in/kevinstratvert/\n- Discord: https://discord.gg/kHuujY2pZf\n- Twitter: https://twitter.com/kevstrat\n- Facebook: https://www.facebook.com/Kevin-Stratvert-101912218227818\n- TikTok: https://www.tiktok.com/@kevinstratvert\n- Instagram: https://www.instagram.com/kevinstratvert/\n\n🎁 TOOLS AND DISCOUNTS\n✅ 🎙️ Voicemod AI Voice Changer | 5% off | https://link.xsolla.com/KZBi89AY\n✅ 🌐 Squarespace Websites | https://squarespace.syuh.net/XYaqYM\n✅ 🔍 Grammarly | https://grammarly.go2cloud.org/SH3nL\n✅ 🛍️ Shopify | https://shopify.pxf.io/XY9rPa\n✅ 📋 Notion | https://affiliate.notion.so/rffva4tr71ax\n✅ 🖼️ Figma | https://psxid.figma.com/lqjg97licpry\n✅ 🤖 ElevenLabs Text-to-Speech | https://try.elevenlabs.io/taqepq60mptr\n\n🎒 MY COURSES\n- Excel for Beginners in under 2 hours: https://kevinstratvert.thinkific.com/\n\n🙏 REQUEST VIDEOS\nhttps://forms.gle/BDrTNUoxheEoMLGt5\n\n🔔 SUBSCRIBE ON YOUTUBE\nhttps://www.youtube.com/user/kevlers?sub_confirmation=1\n\n⚖ DISCLOSURE\nSome links are affiliate links. Purchasing through these links gives me a small commission to support videos on this channel. The price to you is the same.\n\n#stratvert #python #pythonprogramming",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/b093aqAZiPU/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/b093aqAZiPU/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/b093aqAZiPU/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/b093aqAZiPU/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/b093aqAZiPU/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "Kevin Stratvert",
+      "tags": [
+        "kevin stratvert",
+        "python",
+        "python for beginners",
+        "python tutorial",
+        "tutorial",
+        "how to",
+        "learn python",
+        "python programming",
+        "programming",
+        "code",
+        "coding",
+        "if",
+        "elif",
+        "else",
+        "troubleshoot",
+        "troubleshooting",
+        "language",
+        "programming language",
+        "variables",
+        "variable",
+        "define",
+        "function",
+        "functions",
+        "conditional logic",
+        "logic",
+        "condition",
+        "terminal",
+        "visual studio",
+        "visual studio code",
+        "vs code",
+        "microsoft",
+        "notepad",
+        "text editor",
+        "ide",
+        "integrated development environment",
+        "white",
+        "for",
+        "loop",
+        "loops",
+        "library",
+        "comments",
+        "strings",
+        "string",
+        "text",
+        "operator",
+        "test"
+      ],
+      "categoryId": "28",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "👩‍💻 Python for Beginners Tutorial",
+        "description": "In this step-by-step Python for beginner's tutorial, learn how you can get started programming in Python. In this video, I assume that you are completely new to programming. We'll walk through how to get Python, how to run your first code, and how to get an IDE (Integrated Development Environment) to help you code faster. You'll also learn about variables and how to set them. We'll look at functions, if statements, while and for loops, and we'll import libraries. At the end, we'll also look at how you can troubleshoot your code, for instance, when you run into syntax, semantic, or runtime errors. By the end, you'll know how to run code and you'll also understand the basic concepts of programming. My name is Kevin Stratvert and I'll be your guide to Python. I previously worked at Microsoft for 14 years.\n\n📚 RESOURCES\n- Get Python: https://www.python.org\n- Get Microsoft Visual Studio Code: https://code.visualstudio.com\n\n⌚ TIMESTAMPS\n0:00:00 Introduction\n0:01:25 Why program?\n0:02:18 Why Python?\n0:04:33 Get Python\n0:06:43 Run code in Python terminal\n0:09:13 Write code in a text editor like Notepad\n0:11:59 Get an IDE like Visual Studio Code for free\n0:14:20 Set up VS Code\n0:16:34 Run code in VS Code\n0:18:12 Work with numbers & operators\n0:22:24 Work with text / strings\n0:24:03 Comments\n0:25:37 Variables\n0:32:01 Conditional logic\n0:34:55 If, elif, & else statements\n0:41:14 Functions\n0:54:39 While & for loops\n0:59:00 Import libraries\n1:00:02 Troubleshooting code.  \n1:02:28 Wrap up\n   \n📺 RELATED VIDEOS\n- Playlist with all my videos on Python: https://youtube.com/playlist?list=PLlKpQrBME6xKNfcbz2nHyY_anC8BpXRnp\n\n🙌 SUPPORT THE CHANNEL\n- Hit the THANKS button in any video!\n- Amazon affiliate link: https://amzn.to/3kCP2yz (Purchasing through this link gives me a small commission to support videos on this channel -- the price to you is the same)\n\n🔽 CONNECT WITH ME\n- Official web site: http://www.kevinstratvert.com\n- LinkedIn: https://www.linkedin.com/in/kevinstratvert/\n- Discord: https://discord.gg/kHuujY2pZf\n- Twitter: https://twitter.com/kevstrat\n- Facebook: https://www.facebook.com/Kevin-Stratvert-101912218227818\n- TikTok: https://www.tiktok.com/@kevinstratvert\n- Instagram: https://www.instagram.com/kevinstratvert/\n\n🎁 TOOLS AND DISCOUNTS\n✅ 🎙️ Voicemod AI Voice Changer | 5% off | https://link.xsolla.com/KZBi89AY\n✅ 🌐 Squarespace Websites | https://squarespace.syuh.net/XYaqYM\n✅ 🔍 Grammarly | https://grammarly.go2cloud.org/SH3nL\n✅ 🛍️ Shopify | https://shopify.pxf.io/XY9rPa\n✅ 📋 Notion | https://affiliate.notion.so/rffva4tr71ax\n✅ 🖼️ Figma | https://psxid.figma.com/lqjg97licpry\n✅ 🤖 ElevenLabs Text-to-Speech | https://try.elevenlabs.io/taqepq60mptr\n\n🎒 MY COURSES\n- Excel for Beginners in under 2 hours: https://kevinstratvert.thinkific.com/\n\n🙏 REQUEST VIDEOS\nhttps://forms.gle/BDrTNUoxheEoMLGt5\n\n🔔 SUBSCRIBE ON YOUTUBE\nhttps://www.youtube.com/user/kevlers?sub_confirmation=1\n\n⚖ DISCLOSURE\nSome links are affiliate links. Purchasing through these links gives me a small commission to support videos on this channel. The price to you is the same.\n\n#stratvert #python #pythonprogramming"
+      },
+      "defaultAudioLanguage": "en"
+    },
+    "contentDetails": {
+      "duration": "PT1H3M21S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "true",
+      "licensedContent": true,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "4422601",
+      "likeCount": "96062",
+      "favoriteCount": "0",
+      "commentCount": "3294"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "2944lpoun51wAOm5urVS_wgTMf4",
+    "id": "fXxUYb0s-pc",
+    "snippet": {
+      "publishedAt": "2022-04-07T05:03:39Z",
+      "channelId": "UCM9Vnpq-v_-i9zS55-mzePg",
+      "title": "Impress your crush using Python Code ❤️",
+      "description": "Code with explanation is here:\n\nhttps://aitoolz.ai/impress-your-crush-using-python-code/",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/fXxUYb0s-pc/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/fXxUYb0s-pc/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/fXxUYb0s-pc/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/fXxUYb0s-pc/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/fXxUYb0s-pc/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "AI Toolz",
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "Impress your crush using Python Code ❤️",
+        "description": "Code with explanation is here:\n\nhttps://aitoolz.ai/impress-your-crush-using-python-code/"
+      },
+      "defaultAudioLanguage": "en"
+    },
+    "contentDetails": {
+      "duration": "PT16S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "false",
+      "licensedContent": false,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "2473144",
+      "likeCount": "39202",
+      "favoriteCount": "0",
+      "commentCount": "496"
+    }
+  }
+]

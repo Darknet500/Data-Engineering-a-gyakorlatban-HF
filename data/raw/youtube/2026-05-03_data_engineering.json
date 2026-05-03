@@ -1,0 +1,663 @@
+[
+  {
+    "kind": "youtube#video",
+    "etag": "pS8_UidcaSjThLQEvUXBhFRxBvI",
+    "id": "hTjo-QVWcK0",
+    "snippet": {
+      "publishedAt": "2023-11-07T11:57:18Z",
+      "channelId": "UCw_LFe2pS8x3NyipGNJgeEA",
+      "title": "What Does a Data Engineer ACTUALLY Do?",
+      "description": "✅ Free Data Analyst Roadmap: https://learnwithlukas.com/da\n🚀 Data Analyst Certification: https://datacamp.pxf.io/lukasanalyst\n🚀 SQL Certification: https://datacamp.pxf.io/sqlcertificate\n🚀 Power BI Certificate: https://imp.i384100.net/poweranalyst\n\n▬▬▬▬\n\nThe information on this YouTube Channel and the resources available are for educational and informational purposes only. As an affiliate, I may earn when you sign up to websites/ for services provided in the description. This allows me to run the channel and make videos for you. Any income or earnings representations are aspirational statements only of your earning potential. There are no guarantees that you’ll receive the same results or any results at all. I am not a financial or career advisor and nothing in this video should be considered legal, financial, or professional advice.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/hTjo-QVWcK0/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/hTjo-QVWcK0/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/hTjo-QVWcK0/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/hTjo-QVWcK0/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/hTjo-QVWcK0/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "Learn with Lukas",
+      "tags": [
+        "big data",
+        "software engineer day in the life",
+        "what does a data engineer do",
+        "data engineer day in the life",
+        "what is a data engineer",
+        "data engineering roadmap",
+        "data engineer vs data scientist",
+        "data engineering career path",
+        "data engineering",
+        "data engineering explained",
+        "what is data engineering",
+        "data engineer",
+        "data science",
+        "data engineering interview",
+        "data analyst",
+        "data science job",
+        "data engineer beginner",
+        "data engineer entry level",
+        "data engineering job",
+        "become a data engineer"
+      ],
+      "categoryId": "28",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "What Does a Data Engineer ACTUALLY Do?",
+        "description": "✅ Free Data Analyst Roadmap: https://learnwithlukas.com/da\n🚀 Data Analyst Certification: https://datacamp.pxf.io/lukasanalyst\n🚀 SQL Certification: https://datacamp.pxf.io/sqlcertificate\n🚀 Power BI Certificate: https://imp.i384100.net/poweranalyst\n\n▬▬▬▬\n\nThe information on this YouTube Channel and the resources available are for educational and informational purposes only. As an affiliate, I may earn when you sign up to websites/ for services provided in the description. This allows me to run the channel and make videos for you. Any income or earnings representations are aspirational statements only of your earning potential. There are no guarantees that you’ll receive the same results or any results at all. I am not a financial or career advisor and nothing in this video should be considered legal, financial, or professional advice."
+      },
+      "defaultAudioLanguage": "en"
+    },
+    "contentDetails": {
+      "duration": "PT5M2S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "true",
+      "licensedContent": true,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "192819",
+      "likeCount": "3023",
+      "favoriteCount": "0",
+      "commentCount": "38"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "uxO8aH1r5oVCZXoClH9lZJfKL_w",
+    "id": "fX4rMm0UO3Q",
+    "snippet": {
+      "publishedAt": "2025-05-24T16:43:44Z",
+      "channelId": "UCpZvjnmZ_90gtfXd6liRG_A",
+      "title": "Data Engineering Roadmap 2025: How to Become a Data Engineer",
+      "description": "Last year’s video on this topic was a big success! This one’s even better. \nYou’ve probably seen DE salaries …and wondered: “Is Data Engineering for me?”\n I’m wrangling gazillions of records, AWS & GCP certified and happy to share how to kick off your Data Engineering journey easily.\n\nJOIN THE WAITLIST for Data Engineering Tutor\n⚡️https://www.nataindata.com/data-tutor/\n\n———————————————\n\n🏅 COURSES & CERTIFICATES\n\nTop Data Engineer Courses:\nAssociate Data Engineer in SQL - https://datacamp.pxf.io/RGY7ba\nData Engineer Certification Program - https://datacamp.pxf.io/yqEYkv\nData Engineer in Python - https://datacamp.pxf.io/POY7bX\nProfessional Data Engineer in Python - https://datacamp.pxf.io/55KLRL\n\nBuilding APIs in Python skill track - https://datacamp.pxf.io/VxgVn3\n\nTop Data Analyst Courses:\nData Analyst with Python - https://datacamp.pxf.io/XmWZ6a\nData Analyst with PowerBI - https://datacamp.pxf.io/BnBAjL\nAssociate Data Analyst in SQL - https://datacamp.pxf.io/092ObV\n\nTop Data Scientist Courses:\nAssociate Data Scientist in Python - https://datacamp.pxf.io/nXgba7\nAssociate Data Scientist in R - https://datacamp.pxf.io/Oez5XN\n\nIndustry Recognised Certifications:\n\nData Analyst Certification Program - https://datacamp.pxf.io/N9XP5K\nData Scientist Certification Program - https://datacamp.pxf.io/K0g9rx\nSQL Associate Certification Program - https://datacamp.pxf.io/xLObe5\n\n\nWATCH THESE VIDEOS NEXT:\n👀 Starting a Career in Data Engineering 10 Thing I Wish I Knew…\nhttps://www.youtube.com/watch?v=NwQtOLJNtlo&ab_channel=Nataindata\n👀 How I use Python as a Data Engineer \nhttps://www.youtube.com/watch?v=1zronbKNfeg\n\n\n◽️◽️◽️◽️◽️◽️\n\nTIMESTAMPS:\n\n0:00 Intro\n\n0:35 Is DE for me??\n\n01:15 My career path\n\n01:48 Spoiler Alert - Join the Waitlist\n\n02:27 Step 1\n\n03:00 Step 2\n\n03:31 Step 3\n\n04:21 Step 4\n\n04:53 Step 5\n\n05:25 Extra goodies for you\n\n06:04 You got this!",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/fX4rMm0UO3Q/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/fX4rMm0UO3Q/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/fX4rMm0UO3Q/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/fX4rMm0UO3Q/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/fX4rMm0UO3Q/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "Nataindata",
+      "tags": [
+        "data engineer",
+        "data engineer roadmap",
+        "data engineer course",
+        "data engineering",
+        "data",
+        "data science"
+      ],
+      "categoryId": "28",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "Data Engineering Roadmap 2025: How to Become a Data Engineer",
+        "description": "Last year’s video on this topic was a big success! This one’s even better. \nYou’ve probably seen DE salaries …and wondered: “Is Data Engineering for me?”\n I’m wrangling gazillions of records, AWS & GCP certified and happy to share how to kick off your Data Engineering journey easily.\n\nJOIN THE WAITLIST for Data Engineering Tutor\n⚡️https://www.nataindata.com/data-tutor/\n\n———————————————\n\n🏅 COURSES & CERTIFICATES\n\nTop Data Engineer Courses:\nAssociate Data Engineer in SQL - https://datacamp.pxf.io/RGY7ba\nData Engineer Certification Program - https://datacamp.pxf.io/yqEYkv\nData Engineer in Python - https://datacamp.pxf.io/POY7bX\nProfessional Data Engineer in Python - https://datacamp.pxf.io/55KLRL\n\nBuilding APIs in Python skill track - https://datacamp.pxf.io/VxgVn3\n\nTop Data Analyst Courses:\nData Analyst with Python - https://datacamp.pxf.io/XmWZ6a\nData Analyst with PowerBI - https://datacamp.pxf.io/BnBAjL\nAssociate Data Analyst in SQL - https://datacamp.pxf.io/092ObV\n\nTop Data Scientist Courses:\nAssociate Data Scientist in Python - https://datacamp.pxf.io/nXgba7\nAssociate Data Scientist in R - https://datacamp.pxf.io/Oez5XN\n\nIndustry Recognised Certifications:\n\nData Analyst Certification Program - https://datacamp.pxf.io/N9XP5K\nData Scientist Certification Program - https://datacamp.pxf.io/K0g9rx\nSQL Associate Certification Program - https://datacamp.pxf.io/xLObe5\n\n\nWATCH THESE VIDEOS NEXT:\n👀 Starting a Career in Data Engineering 10 Thing I Wish I Knew…\nhttps://www.youtube.com/watch?v=NwQtOLJNtlo&ab_channel=Nataindata\n👀 How I use Python as a Data Engineer \nhttps://www.youtube.com/watch?v=1zronbKNfeg\n\n\n◽️◽️◽️◽️◽️◽️\n\nTIMESTAMPS:\n\n0:00 Intro\n\n0:35 Is DE for me??\n\n01:15 My career path\n\n01:48 Spoiler Alert - Join the Waitlist\n\n02:27 Step 1\n\n03:00 Step 2\n\n03:31 Step 3\n\n04:21 Step 4\n\n04:53 Step 5\n\n05:25 Extra goodies for you\n\n06:04 You got this!"
+      },
+      "defaultAudioLanguage": "en-US"
+    },
+    "contentDetails": {
+      "duration": "PT6M14S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "false",
+      "licensedContent": false,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "14336",
+      "likeCount": "497",
+      "favoriteCount": "0",
+      "commentCount": "28"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "zZNZErGzPXELr6D3j3PUuD369Tw",
+    "id": "PHsC_t0j1dU",
+    "snippet": {
+      "publishedAt": "2024-01-16T15:22:46Z",
+      "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+      "title": "Data Engineering Course for Beginners",
+      "description": "Learn the essentials of data engineering in this course for beginners. You'll learn about Databases, Docker, and analytical engineering. You'll explore advanced topics like data pipeline building with Airflow, and engage in batch processing with Spark and streaming data with Kafka. The course culminates in a comprehensive project, putting your skills to the test in creating a full end-to-end pipeline. \n\n✏️ Justin Chau created this course. \n\nCourse Resources: https://transparent-trout-f2f.notion.site/FreeCodeCamp-Data-Engineering-Course-Resources-e9d2b97aed5b4d4a922257d953c4e759\n\nThanks to Airbyte for providing a grant to make this course possible.\n\n❤️ Try interactive Databases courses we love, right in your browser: https://scrimba.com/freeCodeCamp-Databases (Made possible by a grant from our friends at Scrimba)\n\n\n⭐️ Contents ⭐️\n⌨️ (0:00:00) Introduction\n⌨️ (0:00:36) Why Data Engineering\n⌨️ (0:03:14) Docker\n⌨️ (0:30:38) SQL\n⌨️ (1:04:32) Building a Data Pipeline from Scratch\n⌨️ (1:31:03) dbt\n⌨️ (2:04:11) CRON Job\n⌨️ (2:07:54) Airflow\n⌨️ (2:41:14) Airbyte\n⌨️ (3:01:54) Outro\n\n\n\n🎉 Thanks to our Champion and Sponsor supporters:\n👾 davthecoder\n👾 jedi-or-sith\n👾 南宮千影\n👾 Agustín Kussrow\n👾 Nattira Maneerat\n👾 Heather Wcislo\n👾 Serhiy Kalinets\n👾 Justin Hual\n👾 Otis Morgan \n👾 Oscar Rahnama\n\n--\n\nLearn to code for free and get a developer job: https://www.freecodecamp.org\n\nRead hundreds of articles on programming: https://freecodecamp.org/news",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/PHsC_t0j1dU/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/PHsC_t0j1dU/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/PHsC_t0j1dU/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/PHsC_t0j1dU/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/PHsC_t0j1dU/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "freeCodeCamp.org",
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "Data Engineering Course for Beginners",
+        "description": "Learn the essentials of data engineering in this course for beginners. You'll learn about Databases, Docker, and analytical engineering. You'll explore advanced topics like data pipeline building with Airflow, and engage in batch processing with Spark and streaming data with Kafka. The course culminates in a comprehensive project, putting your skills to the test in creating a full end-to-end pipeline. \n\n✏️ Justin Chau created this course. \n\nCourse Resources: https://transparent-trout-f2f.notion.site/FreeCodeCamp-Data-Engineering-Course-Resources-e9d2b97aed5b4d4a922257d953c4e759\n\nThanks to Airbyte for providing a grant to make this course possible.\n\n❤️ Try interactive Databases courses we love, right in your browser: https://scrimba.com/freeCodeCamp-Databases (Made possible by a grant from our friends at Scrimba)\n\n\n⭐️ Contents ⭐️\n⌨️ (0:00:00) Introduction\n⌨️ (0:00:36) Why Data Engineering\n⌨️ (0:03:14) Docker\n⌨️ (0:30:38) SQL\n⌨️ (1:04:32) Building a Data Pipeline from Scratch\n⌨️ (1:31:03) dbt\n⌨️ (2:04:11) CRON Job\n⌨️ (2:07:54) Airflow\n⌨️ (2:41:14) Airbyte\n⌨️ (3:01:54) Outro\n\n\n\n🎉 Thanks to our Champion and Sponsor supporters:\n👾 davthecoder\n👾 jedi-or-sith\n👾 南宮千影\n👾 Agustín Kussrow\n👾 Nattira Maneerat\n👾 Heather Wcislo\n👾 Serhiy Kalinets\n👾 Justin Hual\n👾 Otis Morgan \n👾 Oscar Rahnama\n\n--\n\nLearn to code for free and get a developer job: https://www.freecodecamp.org\n\nRead hundreds of articles on programming: https://freecodecamp.org/news"
+      },
+      "defaultAudioLanguage": "en"
+    },
+    "contentDetails": {
+      "duration": "PT3H3M43S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "false",
+      "licensedContent": true,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "1047314",
+      "likeCount": "15828",
+      "favoriteCount": "0",
+      "commentCount": "407"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "oW9NdTwbeuLRnR74Z2iujGg_RxU",
+    "id": "NwQtOLJNtlo",
+    "snippet": {
+      "publishedAt": "2024-11-29T19:45:11Z",
+      "channelId": "UCpZvjnmZ_90gtfXd6liRG_A",
+      "title": "Starting a Career in Data Engineering 10 Thing I Wish I Knew…",
+      "description": "In this video, I’m focusing on common mistakes to avoid as you start your journey to becoming a data engineer. These insights are based on my years of experience in the industry.\nLet’s dive!\n\nComprehensive Data Engineering Roadmap\n⚡️ https://www.nataindata.com/data-engineering-roadmap/\n\n🏅 COURSES & CERTIFICATES\n\nTop Data Engineer Courses:\nData Engineer in Python - https://datacamp.pxf.io/e1nbLz\nProfessional Data Engineer in Python - https://datacamp.pxf.io/55KLRL\nAssociate Data Engineer in SQL - https://datacamp.pxf.io/GKEqak\nBuilding APIs in Python skill track - https://datacamp.pxf.io/VxgVn3\n\nTop Data Analyst Courses:\nData Analyst with Python - https://datacamp.pxf.io/XmWZ6a\nData Analyst with PowerBI - https://datacamp.pxf.io/BnBAjL\nAssociate Data Analyst in SQL - https://datacamp.pxf.io/092ObV\n\nTop Data Scientist Courses:\nAssociate Data Scientist in Python - https://datacamp.pxf.io/nXgba7\nAssociate Data Scientist in R - https://datacamp.pxf.io/Oez5XN\n\nIndustry Recognised Certifications:\nData Engineer Certification Program - https://datacamp.pxf.io/55KLWL\nData Analyst Certification Program - https://datacamp.pxf.io/N9XP5K\nData Scientist Certification Program - https://datacamp.pxf.io/K0g9rx\nSQL Associate Certification Program - https://datacamp.pxf.io/xLObe5\n\n\nWATCH THESE VIDEOS NEXT:\n👀 starting a career in Data Engineering 10 things I wish I knew…\nhttps://www.youtube.com/watch?v=NwQtOLJNtlo&ab_channel=Nataindata\n👀 AI agents tutorial: replacing entire Data team\nhttps://youtu.be/t41R7ATwXKM\n\n◽️◽️◽️◽️◽️◽️\n\nTIMESTAMPS:\n\n0:00 Intro\n\n0:11 Mistake #1\n\n00:43 Mistake #2\n\n01:10 Mistake #3\n\n01:45 Mistake #4\n\n02:40 Mistake #5\n\n03:10 Mistake #6\n\n03:37 Mistake #7\n\n04:14 Mistake #8\n\n04:35 Mistake #9\n\n04:55 Mistake #10\n\nPlease tell me if this video was helpful, I do appreciate your feedback!",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/NwQtOLJNtlo/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/NwQtOLJNtlo/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/NwQtOLJNtlo/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/NwQtOLJNtlo/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/NwQtOLJNtlo/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "Nataindata",
+      "tags": [
+        "data engineer",
+        "data engineering"
+      ],
+      "categoryId": "28",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "Starting a Career in Data Engineering 10 Thing I Wish I Knew…",
+        "description": "In this video, I’m focusing on common mistakes to avoid as you start your journey to becoming a data engineer. These insights are based on my years of experience in the industry.\nLet’s dive!\n\nComprehensive Data Engineering Roadmap\n⚡️ https://www.nataindata.com/data-engineering-roadmap/\n\n🏅 COURSES & CERTIFICATES\n\nTop Data Engineer Courses:\nData Engineer in Python - https://datacamp.pxf.io/e1nbLz\nProfessional Data Engineer in Python - https://datacamp.pxf.io/55KLRL\nAssociate Data Engineer in SQL - https://datacamp.pxf.io/GKEqak\nBuilding APIs in Python skill track - https://datacamp.pxf.io/VxgVn3\n\nTop Data Analyst Courses:\nData Analyst with Python - https://datacamp.pxf.io/XmWZ6a\nData Analyst with PowerBI - https://datacamp.pxf.io/BnBAjL\nAssociate Data Analyst in SQL - https://datacamp.pxf.io/092ObV\n\nTop Data Scientist Courses:\nAssociate Data Scientist in Python - https://datacamp.pxf.io/nXgba7\nAssociate Data Scientist in R - https://datacamp.pxf.io/Oez5XN\n\nIndustry Recognised Certifications:\nData Engineer Certification Program - https://datacamp.pxf.io/55KLWL\nData Analyst Certification Program - https://datacamp.pxf.io/N9XP5K\nData Scientist Certification Program - https://datacamp.pxf.io/K0g9rx\nSQL Associate Certification Program - https://datacamp.pxf.io/xLObe5\n\n\nWATCH THESE VIDEOS NEXT:\n👀 starting a career in Data Engineering 10 things I wish I knew…\nhttps://www.youtube.com/watch?v=NwQtOLJNtlo&ab_channel=Nataindata\n👀 AI agents tutorial: replacing entire Data team\nhttps://youtu.be/t41R7ATwXKM\n\n◽️◽️◽️◽️◽️◽️\n\nTIMESTAMPS:\n\n0:00 Intro\n\n0:11 Mistake #1\n\n00:43 Mistake #2\n\n01:10 Mistake #3\n\n01:45 Mistake #4\n\n02:40 Mistake #5\n\n03:10 Mistake #6\n\n03:37 Mistake #7\n\n04:14 Mistake #8\n\n04:35 Mistake #9\n\n04:55 Mistake #10\n\nPlease tell me if this video was helpful, I do appreciate your feedback!"
+      },
+      "defaultAudioLanguage": "en"
+    },
+    "contentDetails": {
+      "duration": "PT5M27S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "false",
+      "licensedContent": false,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "19015",
+      "likeCount": "621",
+      "favoriteCount": "0",
+      "commentCount": "27"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "bTn3Emv5BpcxWv8kwEKNppXAxHA",
+    "id": "ygJ11fzq_ik",
+    "snippet": {
+      "publishedAt": "2024-09-01T23:00:29Z",
+      "channelId": "UCoaAe6ighxrzJuHeFPAlCeA",
+      "title": "Azure End-To-End Data Engineering Project for Beginners (FREE Account) | SQL DB Tutorial",
+      "description": "Automate & build with Claude Code: https://ailuke.short.gy/ygJ11fzq_ik1\nYouTube scripts, in your voice: https://ailuke.short.gy/ygJ11fzq_ik2\n\n✅ Get the resources (Github) 👉 https://www.lukejbyrne.com/c/azure-data-eng-e2e-repo\n\nThis project addresses a critical business need by building a comprehensive data pipeline on Azure. The goal is to extract customer and sales data from an on-premises SQL database, transform it in the cloud, and generate actionable insights through a Power BI dashboard. The dashboard will highlight key performance indicators (KPIs) related to gender distribution and product category sales, allowing stakeholders to filter and analyze data by date, product category, and gender.\n\nTech Stack: On-Prem SQL DB, Data Factory, Data Lake Gen 2, Databricks, Synapse Analytics, Power BI, Entra ID (Active Directory), Key Vault\n\n--------------------\n\n📊 Learn Data & AI (50% OFF):\nhttps://datacamp.pxf.io/yqr3jb\n\n🤖 Early access to the Applied AI Community: \nhttps://kickofflabs.com/waitlist/f795d9da\n\n📮 Join the Newsletter:\nhttps://newsletter.lukejbyrne.com\n\n🔗 Follow me on Linkedin:\nhttps://linkedin.com/in/lukejbyrne\n\n--------------------\n\n🏅 RECOMMENDED COURSES:\n(All under one subscription)\n\n*Top AI Courses:*\nAI Engineer for Developers Course - https://datacamp.pxf.io/gO6WRB\nAI Engineer for Data Scientists Course - https://datacamp.pxf.io/XmnX4a\nDeveloping AI Applications Course - https://datacamp.pxf.io/Bny25L\n\n*Top Data Courses:*\nData Engineer in Python - https://datacamp.pxf.io/aOAWNZ\nAssociate Data Scientist in Python - https://datacamp.pxf.io/AP3Eg1\nData Analyst with Python - https://datacamp.pxf.io/GKVZbk\nAssociate Data Analyst in SQL - https://datacamp.pxf.io/Z6KyV1\n\n--------------------\n\nFurther detail on setting up SSMS and SQL: https://youtu.be/z7o5Wju-PZg?si=QnMF0AVB5DxNf182\n\nHow to set up PowerBI without work email: https://www.youtube.com/watch?v=9RB5xic9BiY\nMr Ks original vid: https://youtu.be/iQ41WqhHglk?si=drPsOQDhLy-gPIbN\n\n--------------------\n\nOverview\n---\n00:00:00 - Introduction  \n00:01:18 - Setting Up the Azure Environment  \n00:05:45 - SQL Database Configuration  \n00:10:30 - Overview of Azure Data Lake Storage  \n\nSSMS\n---\n00:15:23 - Configuring Azure Data Factory  \n00:25:11 - Copying Data from SQL to Data Lake  \n00:38:05 - Debugging Initial Pipeline Issues  \n\nAzure Data Factory\n---\n00:45:13 - ForEach Activity in Azure Data Factory  \n00:55:30 - Testing the SQL-to-Bronze Pipeline  \n01:05:30 - Recap of SQL-to-Bronze Process  \n01:08:41 - Debugging the Pipeline  \n01:10:04 - Monitoring Pipeline Runs  \n01:10:28 - Verifying Data in Bronze Layer  \n01:11:14 - Completion of the Bronze Data Layer  \n\nDatabricks\n---\n01:11:53 - Starting Databricks Configuration  \n01:14:43 - Creating a Databricks Cluster  \n01:17:29 - Mounting Data Lake Storage in Databricks  \n01:23:00 - Transformation in Databricks (Bronze to Silver)  \n01:33:06 - Automating Data Transformations  \n01:37:03 - Integrating Databricks with Data Factory  \n01:41:33 - Pipeline Testing and Monitoring  \n\nSynapse Analytics\n---\n01:45:25 - Loading Data into Synapse Analytics  \n01:50:07 - Creating Views in Synapse  \n01:54:40 - Integrating Synapse Views into Data Factory Pipelines  \n\nPower BI\n---\n01:57:57 - Power BI Dashboard Setup  \n02:03:11 - Building Relationships in Power BI  \n02:06:48 - Dashboard Filters and Slicers  \n02:10:01 - Publishing and Sharing Power BI Dashboards  \n\nAutomation and Active Directory\n---\n02:13:03 - Automating the Entire Pipeline  \n02:17:11 - Active Directory (Entra ID) Integration  \n02:21:33 - Triggering and Monitoring Automated Pipelines  \n02:29:43 - Final Dashboard Refresh and Validation  \n\nClosing\n---\n02:30:07 - Closing Remarks and Next Steps\n\n--------------------\n\nBusiness inquiries: hello@lukejbyrne.com",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/ygJ11fzq_ik/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/ygJ11fzq_ik/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/ygJ11fzq_ik/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/ygJ11fzq_ik/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/ygJ11fzq_ik/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "AI Luke",
+      "tags": [
+        "data engineer",
+        "data engineering",
+        "azure data engineering project",
+        "azure end to end data engineering project",
+        "azure data factory",
+        "azure data engineer",
+        "azure databricks",
+        "azure project",
+        "free azure project",
+        "end-to-end data engineering project",
+        "azure data engineer tutorial",
+        "azure data engineer tutorial for beginners",
+        "free azure data engineering project",
+        "azure data lake gen 2",
+        "spark project using databricks",
+        "how to set up azure data engineering",
+        "how to set up sql",
+        "power bi",
+        "data"
+      ],
+      "categoryId": "28",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "Azure End-To-End Data Engineering Project for Beginners (FREE Account) | SQL DB Tutorial",
+        "description": "Automate & build with Claude Code: https://ailuke.short.gy/ygJ11fzq_ik1\nYouTube scripts, in your voice: https://ailuke.short.gy/ygJ11fzq_ik2\n\n✅ Get the resources (Github) 👉 https://www.lukejbyrne.com/c/azure-data-eng-e2e-repo\n\nThis project addresses a critical business need by building a comprehensive data pipeline on Azure. The goal is to extract customer and sales data from an on-premises SQL database, transform it in the cloud, and generate actionable insights through a Power BI dashboard. The dashboard will highlight key performance indicators (KPIs) related to gender distribution and product category sales, allowing stakeholders to filter and analyze data by date, product category, and gender.\n\nTech Stack: On-Prem SQL DB, Data Factory, Data Lake Gen 2, Databricks, Synapse Analytics, Power BI, Entra ID (Active Directory), Key Vault\n\n--------------------\n\n📊 Learn Data & AI (50% OFF):\nhttps://datacamp.pxf.io/yqr3jb\n\n🤖 Early access to the Applied AI Community: \nhttps://kickofflabs.com/waitlist/f795d9da\n\n📮 Join the Newsletter:\nhttps://newsletter.lukejbyrne.com\n\n🔗 Follow me on Linkedin:\nhttps://linkedin.com/in/lukejbyrne\n\n--------------------\n\n🏅 RECOMMENDED COURSES:\n(All under one subscription)\n\n*Top AI Courses:*\nAI Engineer for Developers Course - https://datacamp.pxf.io/gO6WRB\nAI Engineer for Data Scientists Course - https://datacamp.pxf.io/XmnX4a\nDeveloping AI Applications Course - https://datacamp.pxf.io/Bny25L\n\n*Top Data Courses:*\nData Engineer in Python - https://datacamp.pxf.io/aOAWNZ\nAssociate Data Scientist in Python - https://datacamp.pxf.io/AP3Eg1\nData Analyst with Python - https://datacamp.pxf.io/GKVZbk\nAssociate Data Analyst in SQL - https://datacamp.pxf.io/Z6KyV1\n\n--------------------\n\nFurther detail on setting up SSMS and SQL: https://youtu.be/z7o5Wju-PZg?si=QnMF0AVB5DxNf182\n\nHow to set up PowerBI without work email: https://www.youtube.com/watch?v=9RB5xic9BiY\nMr Ks original vid: https://youtu.be/iQ41WqhHglk?si=drPsOQDhLy-gPIbN\n\n--------------------\n\nOverview\n---\n00:00:00 - Introduction  \n00:01:18 - Setting Up the Azure Environment  \n00:05:45 - SQL Database Configuration  \n00:10:30 - Overview of Azure Data Lake Storage  \n\nSSMS\n---\n00:15:23 - Configuring Azure Data Factory  \n00:25:11 - Copying Data from SQL to Data Lake  \n00:38:05 - Debugging Initial Pipeline Issues  \n\nAzure Data Factory\n---\n00:45:13 - ForEach Activity in Azure Data Factory  \n00:55:30 - Testing the SQL-to-Bronze Pipeline  \n01:05:30 - Recap of SQL-to-Bronze Process  \n01:08:41 - Debugging the Pipeline  \n01:10:04 - Monitoring Pipeline Runs  \n01:10:28 - Verifying Data in Bronze Layer  \n01:11:14 - Completion of the Bronze Data Layer  \n\nDatabricks\n---\n01:11:53 - Starting Databricks Configuration  \n01:14:43 - Creating a Databricks Cluster  \n01:17:29 - Mounting Data Lake Storage in Databricks  \n01:23:00 - Transformation in Databricks (Bronze to Silver)  \n01:33:06 - Automating Data Transformations  \n01:37:03 - Integrating Databricks with Data Factory  \n01:41:33 - Pipeline Testing and Monitoring  \n\nSynapse Analytics\n---\n01:45:25 - Loading Data into Synapse Analytics  \n01:50:07 - Creating Views in Synapse  \n01:54:40 - Integrating Synapse Views into Data Factory Pipelines  \n\nPower BI\n---\n01:57:57 - Power BI Dashboard Setup  \n02:03:11 - Building Relationships in Power BI  \n02:06:48 - Dashboard Filters and Slicers  \n02:10:01 - Publishing and Sharing Power BI Dashboards  \n\nAutomation and Active Directory\n---\n02:13:03 - Automating the Entire Pipeline  \n02:17:11 - Active Directory (Entra ID) Integration  \n02:21:33 - Triggering and Monitoring Automated Pipelines  \n02:29:43 - Final Dashboard Refresh and Validation  \n\nClosing\n---\n02:30:07 - Closing Remarks and Next Steps\n\n--------------------\n\nBusiness inquiries: hello@lukejbyrne.com"
+      },
+      "defaultAudioLanguage": "en-US"
+    },
+    "contentDetails": {
+      "duration": "PT2H30M21S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "false",
+      "licensedContent": true,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "117527",
+      "likeCount": "2828",
+      "favoriteCount": "0",
+      "commentCount": "187"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "GYYRx95Bk5gT8VcaoVFST4Ic6l0",
+    "id": "qWru-b6m030",
+    "snippet": {
+      "publishedAt": "2021-03-17T13:43:16Z",
+      "channelId": "UCEKI_F16hUtBHcw9tBtr24Q",
+      "title": "How Data Engineering Works",
+      "description": "So, the sole purpose of data engineering is to take data from the source and save it to make it available for analysis. Sounds simple, but it’s the matter of the system that works under the hood.\n\nWatch our video to find out more about data engineering:\n00:00 Basic Data Infrastructure\n02:07 ETL Pipeline\n04:34 Data Warehouse\n06:07 Data scientists and data engineers\n08:05  Big Data\n09:45 Data streaming\n11:47 Distributed Computing\n\n\nSources:\n[1] https://sre.google/sre-book/eliminating-toil/\n[2] https://www.statista.com/statistics/419778/paypal-annual-payments/\n[3] https://www.forbes.com/sites/bernardmarr/2019/08/23/the-amazing-ways-youtube-uses-artificial-intelligence-and-machine-learning/?sh=3752a1d75852\n\nTo learn more check our articles: \n1) What is Data Engineer: Role Description, Responsibilities, Skills, and Background https://www.altexsoft.com/blog/what-is-data-engineer-role-skills/?utm_source=youtube&utm_medium=link&utm_campaign=howdataengineeringworks \n2) Explaining the Data Pipeline, Data Warehouse, and Data Engineer Role https://www.altexsoft.com/blog/datascience/what-is-data-engineering-explaining-data-pipeline-data-warehouse-and-data-engineer-role/ \n3) Big Data Engineer: https://www.altexsoft.com/blog/big-data-engineer/\n4) What is ETL Developer https://www.altexsoft.com/blog/datascience/who-is-etl-developer-role-description-process-breakdown-responsibilities-and-skills/\n\n\nLearn more about AltexSoft: https://www.altexsoft.com/\nFollow us on LinkedIn: https://www.linkedin.com/company/altexsoft/\nFollow us on Facebook: https://www.facebook.com/altexsoft/\nFollow us on Twitter: https://twitter.com/AltexSoft\nFollow us on Instagram: https://www.instagram.com/altexsoftcom/\n\n\n\nMusic in video by Kevin MacLeod (https://incompetech.filmmusic.io): Sneaky Snitch, Sheep May Safely Graze - BWV 208, Wholesome, Disco Sting, Krampuss Workshop, Thinking Music, Whiskey on the Mississippi, Hidden Agenda, Egmont Overture, Sheep May Safely Graze, Holiday Weasel, Brittle Rille, March of the spoons, Hidden Agenda, Fuzzball Parade, Gothamlicious, Light Sting. \nLicense https://incompetech.filmmusic.io/standard-license",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/qWru-b6m030/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/qWru-b6m030/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/qWru-b6m030/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/qWru-b6m030/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/qWru-b6m030/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "AltexSoft | TravelTech, AI & Software Engineering",
+      "tags": [
+        "data engineering",
+        "data science",
+        "data infrastructure",
+        "etl",
+        "data streaming",
+        "Distributed Computing",
+        "kafka",
+        "hadoop"
+      ],
+      "categoryId": "28",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "How Data Engineering Works",
+        "description": "So, the sole purpose of data engineering is to take data from the source and save it to make it available for analysis. Sounds simple, but it’s the matter of the system that works under the hood.\n\nWatch our video to find out more about data engineering:\n00:00 Basic Data Infrastructure\n02:07 ETL Pipeline\n04:34 Data Warehouse\n06:07 Data scientists and data engineers\n08:05  Big Data\n09:45 Data streaming\n11:47 Distributed Computing\n\n\nSources:\n[1] https://sre.google/sre-book/eliminating-toil/\n[2] https://www.statista.com/statistics/419778/paypal-annual-payments/\n[3] https://www.forbes.com/sites/bernardmarr/2019/08/23/the-amazing-ways-youtube-uses-artificial-intelligence-and-machine-learning/?sh=3752a1d75852\n\nTo learn more check our articles: \n1) What is Data Engineer: Role Description, Responsibilities, Skills, and Background https://www.altexsoft.com/blog/what-is-data-engineer-role-skills/?utm_source=youtube&utm_medium=link&utm_campaign=howdataengineeringworks \n2) Explaining the Data Pipeline, Data Warehouse, and Data Engineer Role https://www.altexsoft.com/blog/datascience/what-is-data-engineering-explaining-data-pipeline-data-warehouse-and-data-engineer-role/ \n3) Big Data Engineer: https://www.altexsoft.com/blog/big-data-engineer/\n4) What is ETL Developer https://www.altexsoft.com/blog/datascience/who-is-etl-developer-role-description-process-breakdown-responsibilities-and-skills/\n\n\nLearn more about AltexSoft: https://www.altexsoft.com/\nFollow us on LinkedIn: https://www.linkedin.com/company/altexsoft/\nFollow us on Facebook: https://www.facebook.com/altexsoft/\nFollow us on Twitter: https://twitter.com/AltexSoft\nFollow us on Instagram: https://www.instagram.com/altexsoftcom/\n\n\n\nMusic in video by Kevin MacLeod (https://incompetech.filmmusic.io): Sneaky Snitch, Sheep May Safely Graze - BWV 208, Wholesome, Disco Sting, Krampuss Workshop, Thinking Music, Whiskey on the Mississippi, Hidden Agenda, Egmont Overture, Sheep May Safely Graze, Holiday Weasel, Brittle Rille, March of the spoons, Hidden Agenda, Fuzzball Parade, Gothamlicious, Light Sting. \nLicense https://incompetech.filmmusic.io/standard-license"
+      },
+      "defaultAudioLanguage": "en"
+    },
+    "contentDetails": {
+      "duration": "PT14M14S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "false",
+      "licensedContent": true,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "563632",
+      "likeCount": "24819",
+      "favoriteCount": "0",
+      "commentCount": "655"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "tl8-HKGymiN0ICC_slmeH_jut9A",
+    "id": "nFT0M7JJtsw",
+    "snippet": {
+      "publishedAt": "2025-09-04T03:46:44Z",
+      "channelId": "UCigb9xf3iekhQiVh5XKW6Ww",
+      "title": "Data Engineering RoadMap",
+      "description": "🚀 Roadmap to Become a Data Engineer in 2025 💻📊\n\nWant to start your career in Data Engineering but don’t know where to begin? Here’s a step-by-step roadmap covering everything from SQL basics to Big Data tools, Cloud Platforms, Data Orchestration, Real-Time Pipelines, and CI/CD for Data.\n\n📌 Stages Covered:\n🔹 Stage 1 – SQL & Database Fundamentals 🗄️\n🔹 Stage 2 – Python for Data Engineering 🐍\n🔹 Stage 3 – Data Modeling & ETL/ELT Design 🏗️\n🔹 Stage 4 – Big Data Tools ⚡\n🔹 Stage 5 – Cloud Platforms ☁️\n🔹 Stage 6 – Data Orchestration 🔄\n🔹 Stage 7 – Data Lakes & Warehouses 💧🏢\n🔹 Stage 8 – Monitoring, Testing & Governance 🛡️\n🔹 Stage 9 – Real-Time Pipelines ⏱️\n🔹 Stage 10 – CI/CD & DevOps for Data ⚙️\n\n✨ Follow this roadmap and you’ll transform into a skilled Data Engineer ready for top tech jobs!\n\n\n---\n\n🔑 Keywords: Data Engineer, Data Engineering Roadmap, Big Data, ETL, Cloud Computing, Data Pipelines, SQL, Python, DevOps for Data, Data Lakes, Real-Time Streaming\n\n📌 Hashtags:\n#DataEngineer #DataEngineering #BigData #SQL #Python #ETL #DataPipelines #CloudComputing #DevOps #AI #MachineLearning #TechCareer #CareerGrowth #DataScience#viral #viralvideo #trending #trendingshorts #shortvideo #shorts",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/nFT0M7JJtsw/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/nFT0M7JJtsw/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/nFT0M7JJtsw/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/nFT0M7JJtsw/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/nFT0M7JJtsw/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "CodewithPrashant ",
+      "categoryId": "22",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "Data Engineering RoadMap",
+        "description": "🚀 Roadmap to Become a Data Engineer in 2025 💻📊\n\nWant to start your career in Data Engineering but don’t know where to begin? Here’s a step-by-step roadmap covering everything from SQL basics to Big Data tools, Cloud Platforms, Data Orchestration, Real-Time Pipelines, and CI/CD for Data.\n\n📌 Stages Covered:\n🔹 Stage 1 – SQL & Database Fundamentals 🗄️\n🔹 Stage 2 – Python for Data Engineering 🐍\n🔹 Stage 3 – Data Modeling & ETL/ELT Design 🏗️\n🔹 Stage 4 – Big Data Tools ⚡\n🔹 Stage 5 – Cloud Platforms ☁️\n🔹 Stage 6 – Data Orchestration 🔄\n🔹 Stage 7 – Data Lakes & Warehouses 💧🏢\n🔹 Stage 8 – Monitoring, Testing & Governance 🛡️\n🔹 Stage 9 – Real-Time Pipelines ⏱️\n🔹 Stage 10 – CI/CD & DevOps for Data ⚙️\n\n✨ Follow this roadmap and you’ll transform into a skilled Data Engineer ready for top tech jobs!\n\n\n---\n\n🔑 Keywords: Data Engineer, Data Engineering Roadmap, Big Data, ETL, Cloud Computing, Data Pipelines, SQL, Python, DevOps for Data, Data Lakes, Real-Time Streaming\n\n📌 Hashtags:\n#DataEngineer #DataEngineering #BigData #SQL #Python #ETL #DataPipelines #CloudComputing #DevOps #AI #MachineLearning #TechCareer #CareerGrowth #DataScience#viral #viralvideo #trending #trendingshorts #shortvideo #shorts"
+      },
+      "defaultAudioLanguage": "en"
+    },
+    "contentDetails": {
+      "duration": "PT7S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "false",
+      "licensedContent": false,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "145386",
+      "likeCount": "2308",
+      "favoriteCount": "0",
+      "commentCount": "13"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "uHIMVDlOYK1E8L0m69OXdqyC94o",
+    "id": "JN75APaI55M",
+    "snippet": {
+      "publishedAt": "2026-02-20T15:10:34Z",
+      "channelId": "UCQJoT6HfpDIc_A75RLWHGuw",
+      "title": "DON’T Become a Data Engineer - Do THIS Instead",
+      "description": "Start learning Cloud Engineering for FREE → https://www.skool.com/cloudengineeracademy-mini/about/?el=YTdont_become_data_engineer\n\nSerious about landing a 6-Figure Cloud role?  Book a call and see how my Academy can help you → https://learn.cloudengineeracademy.io/?el=YTdont_become_data_engineer\n\n––– Testimonials –––\nMy Mentorship YouTube Channel → https://www.youtube.com/@UCZTuw-I-YiYxr1VJvclMBMQ\n\nPartnerships & Consulting - hello@soleymanshahir.com",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/JN75APaI55M/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/JN75APaI55M/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/JN75APaI55M/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/JN75APaI55M/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/JN75APaI55M/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "Tech With Soleyman",
+      "tags": [
+        "become a data engineer",
+        "why not to become a data engineer",
+        "how to become a data engineer",
+        "should i become a data engineer",
+        "why you should not become a data engineer",
+        "should you become a data engineer",
+        "why you should become a data engineer",
+        "how to become a data engineer after college",
+        "become a successful data engineer",
+        "what does a data engineer do",
+        "mistakes to become data engineer",
+        "how not to become data engineer",
+        "don't become a data analyst",
+        "how to become data engineer 2026"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "DON’T Become a Data Engineer - Do THIS Instead",
+        "description": "Start learning Cloud Engineering for FREE → https://www.skool.com/cloudengineeracademy-mini/about/?el=YTdont_become_data_engineer\n\nSerious about landing a 6-Figure Cloud role?  Book a call and see how my Academy can help you → https://learn.cloudengineeracademy.io/?el=YTdont_become_data_engineer\n\n––– Testimonials –––\nMy Mentorship YouTube Channel → https://www.youtube.com/@UCZTuw-I-YiYxr1VJvclMBMQ\n\nPartnerships & Consulting - hello@soleymanshahir.com"
+      },
+      "defaultAudioLanguage": "en"
+    },
+    "contentDetails": {
+      "duration": "PT9M21S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "false",
+      "licensedContent": true,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "66426",
+      "likeCount": "1425",
+      "favoriteCount": "0",
+      "commentCount": "81"
+    }
+  },
+  {
+    "kind": "youtube#video",
+    "etag": "TKZ-oaHo_NAxBurHJW0zrvl3K0o",
+    "id": "1nVGaNbvuXg",
+    "snippet": {
+      "publishedAt": "2026-01-20T13:08:02Z",
+      "channelId": "UC8_RSKwbU1OmZWNEoLV1tQg",
+      "title": "How I’d Learn Data Engineering in 2026 From Zero to Senior (Built by a Data Engineer)",
+      "description": "► DataCamp Associate Data Engineer in SQL - https://datacamp.pxf.io/4GO30o\n► DataCamp Data Engineer Certification - https://datacamp.pxf.io/YREOPj\nGet 25% OFF DataCamp's Here https://datacamp.pxf.io/bOEe66\n🎁 *Notion Data Engineering Roadmap* : https://www.notion.so/templates/data-engineering-roadmap-125\n\n► *Subscribe* for more Free Data content: https://www.youtube.com/channel/UC8_RSKwbU1OmZWNEoLV1tQg?sub_confirmation=1\n\n*🏆 DATA ACADEMY*\n- *SQL* https://www.datawithbaraa.com/course/sql-full-course-for-beginners\n- *Python* https://www.datawithbaraa.com/course/the-ultimate-python-mastery\n- *Python Handbook* (sketches, notes, code) https://academy.datawithbaraa.com/l/digital_download/998313/the-python-handbook\n- *Tableau* https://www.datawithbaraa.com/course/tableau-ultimate-full-course-for-beginners\n\n*🎓UDEMY*\n- *SQL* https://www.udemy.com/course/the-complete-sql-bootcamp-30-hours-go-from-zero-to-hero/?referralCode=D20781228C2EB8B98339\n- *Python* https://www.udemy.com/course/the-complete-python-bootcamp-13hours-go-from-zero-to-hero/?referralCode=776491A4119FF8AF41CA\n- *Tableau* https://www.udemy.com/course/the-tableau-ultimate-course-from-zero-to-hero/?referralCode=6544726FDC491A6B25EC\n\n━━━━━\n\n*CONNECT WITH ME*\n📬 Newsletter https://www.blog.datawithbaraa.com\n👨‍💻 LinkedIn https://www.linkedin.com/in/baraa-khatib-salkini/\n📸 Instagram https://www.instagram.com/datawithbaraa/\n🎥 TikTok https://www.tiktok.com/@datawithbaraa\n🌍 Website https://datawithbaraa.com/\n💬 Discord https://discord.gg/gsVJbMxKcA\n🧭 Notion Roadmaps https://www.notion.com/@datawithbaraa\n⭐ Favorite Books/Gear https://candle-gosling-511.notion.site/My-Favorite-Books-Gear-Apps-28334b251f1281e58a52cf7aa594e0e9?source=copy_link\n📩 Sponsorships baraa@datawithbaraa.com\n\n━━━━━\n\n*MY FREE COURSES*\n- *SQL* https://youtu.be/SSKVgrwhzus\n- *Python* https://youtu.be/Rq5gJVxz55Q\n- *Tableau* https://youtu.be/UcGF09Awm4Y\n- *Databricks* https://www.youtube.com/playlist?list=PLNcg_FV9n7qZoxVkw-KPhcmgLWjHWVUc9\n- *Power BI* https://www.youtube.com/playlist?list=PLNcg_FV9n7qZge4KDGqGtqgiuVuhVZWzu\n- *Data Projects* https://www.youtube.com/playlist?list=PLNcg_FV9n7qZ4Ym8ZriYT6WF8TaC2e_R7\n- *Data Careers* https://www.youtube.com/playlist?list=PLNcg_FV9n7qah95jp-aPtysu7kFCbg7hd\n\n━━━━━\n\nHow to learn Python for data engineers using a clear step-by-step roadmap focused only on what you need in real data projects. This video shows what to learn, what to skip, and how to become productive with Python fast.\n\n📖 *Table of Content*\n00:00 - Intro\n02:08 - Phase 0: Understand Role\n04:18 - Phase 1: Core Skills\n07:48 - Datacamp\n08:49 - Phase 2: DE Skills\n13:06 - Phase 3: Get Hired\n22:11 - Phase 4: Junior DE\n24:41 - Phase 5: Senior DE\n28:35 - Phase 6: Data Architect\n\n#dataengineering #python #learnpython #dataengineer",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/1nVGaNbvuXg/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/1nVGaNbvuXg/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/1nVGaNbvuXg/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        },
+        "standard": {
+          "url": "https://i.ytimg.com/vi/1nVGaNbvuXg/sddefault.jpg",
+          "width": 640,
+          "height": 480
+        },
+        "maxres": {
+          "url": "https://i.ytimg.com/vi/1nVGaNbvuXg/maxresdefault.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "channelTitle": "Data with Baraa",
+      "tags": [
+        "data engineering roadmap 2026",
+        "become a data engineer",
+        "how to learn data engineering",
+        "data engineering",
+        "data engineer",
+        "how to become a data engineer",
+        "data engineering roadmap",
+        "data engineer roadmap 2026",
+        "learn data engineering",
+        "data engineering for beginners",
+        "data engineering tutorial",
+        "data engineering skills",
+        "data engineering projects",
+        "python for data engineering",
+        "pyspark tutorial",
+        "spark data engineering",
+        "databricks tutorial",
+        "lakehouse architecture",
+        "data engineer salary",
+        "de"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en",
+      "localized": {
+        "title": "How I’d Learn Data Engineering in 2026 From Zero to Senior (Built by a Data Engineer)",
+        "description": "► DataCamp Associate Data Engineer in SQL - https://datacamp.pxf.io/4GO30o\n► DataCamp Data Engineer Certification - https://datacamp.pxf.io/YREOPj\nGet 25% OFF DataCamp's Here https://datacamp.pxf.io/bOEe66\n🎁 *Notion Data Engineering Roadmap* : https://www.notion.so/templates/data-engineering-roadmap-125\n\n► *Subscribe* for more Free Data content: https://www.youtube.com/channel/UC8_RSKwbU1OmZWNEoLV1tQg?sub_confirmation=1\n\n*🏆 DATA ACADEMY*\n- *SQL* https://www.datawithbaraa.com/course/sql-full-course-for-beginners\n- *Python* https://www.datawithbaraa.com/course/the-ultimate-python-mastery\n- *Python Handbook* (sketches, notes, code) https://academy.datawithbaraa.com/l/digital_download/998313/the-python-handbook\n- *Tableau* https://www.datawithbaraa.com/course/tableau-ultimate-full-course-for-beginners\n\n*🎓UDEMY*\n- *SQL* https://www.udemy.com/course/the-complete-sql-bootcamp-30-hours-go-from-zero-to-hero/?referralCode=D20781228C2EB8B98339\n- *Python* https://www.udemy.com/course/the-complete-python-bootcamp-13hours-go-from-zero-to-hero/?referralCode=776491A4119FF8AF41CA\n- *Tableau* https://www.udemy.com/course/the-tableau-ultimate-course-from-zero-to-hero/?referralCode=6544726FDC491A6B25EC\n\n━━━━━\n\n*CONNECT WITH ME*\n📬 Newsletter https://www.blog.datawithbaraa.com\n👨‍💻 LinkedIn https://www.linkedin.com/in/baraa-khatib-salkini/\n📸 Instagram https://www.instagram.com/datawithbaraa/\n🎥 TikTok https://www.tiktok.com/@datawithbaraa\n🌍 Website https://datawithbaraa.com/\n💬 Discord https://discord.gg/gsVJbMxKcA\n🧭 Notion Roadmaps https://www.notion.com/@datawithbaraa\n⭐ Favorite Books/Gear https://candle-gosling-511.notion.site/My-Favorite-Books-Gear-Apps-28334b251f1281e58a52cf7aa594e0e9?source=copy_link\n📩 Sponsorships baraa@datawithbaraa.com\n\n━━━━━\n\n*MY FREE COURSES*\n- *SQL* https://youtu.be/SSKVgrwhzus\n- *Python* https://youtu.be/Rq5gJVxz55Q\n- *Tableau* https://youtu.be/UcGF09Awm4Y\n- *Databricks* https://www.youtube.com/playlist?list=PLNcg_FV9n7qZoxVkw-KPhcmgLWjHWVUc9\n- *Power BI* https://www.youtube.com/playlist?list=PLNcg_FV9n7qZge4KDGqGtqgiuVuhVZWzu\n- *Data Projects* https://www.youtube.com/playlist?list=PLNcg_FV9n7qZ4Ym8ZriYT6WF8TaC2e_R7\n- *Data Careers* https://www.youtube.com/playlist?list=PLNcg_FV9n7qah95jp-aPtysu7kFCbg7hd\n\n━━━━━\n\nHow to learn Python for data engineers using a clear step-by-step roadmap focused only on what you need in real data projects. This video shows what to learn, what to skip, and how to become productive with Python fast.\n\n📖 *Table of Content*\n00:00 - Intro\n02:08 - Phase 0: Understand Role\n04:18 - Phase 1: Core Skills\n07:48 - Datacamp\n08:49 - Phase 2: DE Skills\n13:06 - Phase 3: Get Hired\n22:11 - Phase 4: Junior DE\n24:41 - Phase 5: Senior DE\n28:35 - Phase 6: Data Architect\n\n#dataengineering #python #learnpython #dataengineer"
+      },
+      "defaultAudioLanguage": "en"
+    },
+    "contentDetails": {
+      "duration": "PT32M59S",
+      "dimension": "2d",
+      "definition": "hd",
+      "caption": "false",
+      "licensedContent": true,
+      "contentRating": {},
+      "projection": "rectangular"
+    },
+    "statistics": {
+      "viewCount": "116205",
+      "likeCount": "4788",
+      "favoriteCount": "0",
+      "commentCount": "288"
+    }
+  }
+]
