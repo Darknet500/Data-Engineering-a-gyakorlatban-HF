@@ -2,3 +2,7 @@ pandas
 python-dotenv
 requests
 google-api-python-client
+psycopg2-binary
+sqlalchemy
+boto3
+apache-airflow
