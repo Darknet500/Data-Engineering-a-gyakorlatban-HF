@@ -1,18 +1,18 @@
 services:
   postgres:
     image: postgres:15
-    container_name: project
+    container_name: postgres
     environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB:-dehf}
+      POSTGRES_USER: ${POSTGRES_USER:-dehf}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-dehf}
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./sql/ddl/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-dehf} -d ${POSTGRES_DB:-dehf}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -22,8 +22,8 @@ services:
     container_name: minio
     command: server /data --console-address ":9001"
     environment:
-      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
-      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
     ports:
       - "9000:9000"
       - "9001:9001"
@@ -38,52 +38,53 @@ services:
     entrypoint: >
       /bin/sh -c "
       sleep 5;
-      mc alias set myminio http://minio:9000 ${MINIO_ROOT_USER} ${MINIO_ROOT_PASSWORD};
+      mc alias set myminio http://minio:9000 ${MINIO_ROOT_USER:-minioadmin} ${MINIO_ROOT_PASSWORD:-minioadmin};
       mc mb myminio/raw || true;
       mc mb myminio/processed || true;
       exit 0;
       "
 
   airflow-init:
+    image: dehf-airflow:latest
     build:
       context: .
       dockerfile: docker/airflow/Dockerfile
-    container_name: airflow_init
+    container_name: dehf-airflow-init
     depends_on:
       postgres:
         condition: service_healthy
+      minio-create-bucket:
+        condition: service_completed_successfully
     env_file:
       - .env
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
-      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
-      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-dehf}:${POSTGRES_PASSWORD:-dehf}@postgres:5432/${POSTGRES_DB:-dehf}
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__WEBSERVER__DEFAULT_UI_TIMEZONE: Europe/Budapest
       POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432
       MINIO_ENDPOINT: http://minio:9000
-    user: "${AIRFLOW_UID}:0"
     volumes:
       - ./dags:/opt/airflow/dags
       - ./scripts:/opt/airflow/scripts
       - ./data:/opt/airflow/data
       - ./sql:/opt/airflow/sql
-    entrypoint: /bin/bash
-    command:
-      - -c
-      - |
-        airflow db migrate && \
-        airflow users create \
-          --username ${_AIRFLOW_WWW_USER_USERNAME} \
-          --password ${_AIRFLOW_WWW_USER_PASSWORD} \
-          --firstname Airflow \
-          --lastname Admin \
-          --role Admin \
-          --email admin@example.com || true
+      - airflow_logs:/opt/airflow/logs
+    command: >
+      bash -c "
+      airflow db migrate &&
+      airflow users create
+      --username airflow
+      --password airflow
+      --firstname Airflow
+      --lastname Admin
+      --role Admin
+      --email airflow@example.com || true
+      "
 
   airflow-webserver:
-    build:
-      context: .
-      dockerfile: docker/airflow/Dockerfile
+    image: dehf-airflow:latest
     container_name: airflow_webserver
     depends_on:
       postgres:
@@ -95,26 +96,24 @@ services:
       - .env
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
-      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
-      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-dehf}:${POSTGRES_PASSWORD:-dehf}@postgres:5432/${POSTGRES_DB:-dehf}
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
       AIRFLOW__WEBSERVER__DEFAULT_UI_TIMEZONE: Europe/Budapest
       POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432
       MINIO_ENDPOINT: http://minio:9000
-    user: "${AIRFLOW_UID}:0"
     volumes:
       - ./dags:/opt/airflow/dags
       - ./scripts:/opt/airflow/scripts
       - ./data:/opt/airflow/data
       - ./sql:/opt/airflow/sql
+      - airflow_logs:/opt/airflow/logs
     ports:
       - "8080:8080"
     command: webserver
 
   airflow-scheduler:
-    build:
-      context: .
-      dockerfile: docker/airflow/Dockerfile
+    image: dehf-airflow:latest
     container_name: airflow_scheduler
     depends_on:
       postgres:
@@ -126,17 +125,17 @@ services:
       - .env
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
-      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
-      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-dehf}:${POSTGRES_PASSWORD:-dehf}@postgres:5432/${POSTGRES_DB:-dehf}
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
       POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432
       MINIO_ENDPOINT: http://minio:9000
-    user: "${AIRFLOW_UID}:0"
     volumes:
       - ./dags:/opt/airflow/dags
       - ./scripts:/opt/airflow/scripts
       - ./data:/opt/airflow/data
       - ./sql:/opt/airflow/sql
+      - airflow_logs:/opt/airflow/logs
     command: scheduler
 
   metabase:
@@ -147,7 +146,13 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+    volumes:
+      - metabase_data:/metabase-data
+    environment:
+      MB_DB_FILE: /metabase-data/metabase.db
 
 volumes:
   postgres_data:
   minio_data:
+  metabase_data:
+  airflow_logs:
