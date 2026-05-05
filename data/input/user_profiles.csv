@@ -1,4 +1,4 @@
-profile_name,preferred_topics,available_time_minutes
-student,python;data engineering;ai,45
-marketer,social media;youtube;trends,30
-developer,python;postgres;docker,60
+profile_id,persona,interests,preferred_topics,available_time_minutes,business_goal
+1,Junior Data Engineer,"python;sql;airflow","python;data engineering",45,learn_practical_data_tools
+2,ML Startup Founder,"ai;market trends;product","artificial intelligence;data engineering",30,find_growth_topics
+3,Marketing Analyst,"social media;engagement;news","python;artificial intelligence",60,track_content_opportunities

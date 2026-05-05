@@ -1,88 +1,71 @@
-DROP VIEW IF EXISTS vw_profile_recommendations;
-DROP VIEW IF EXISTS vw_top_videos;
-DROP VIEW IF EXISTS vw_topic_trends;
-
-CREATE VIEW vw_topic_trends AS
+CREATE OR REPLACE VIEW vw_topic_trends AS
 SELECT
-    d.date_key,
-    d.year,
-    d.month,
-    d.week,
+    f.date_key,
     t.topic_name,
-    f.youtube_video_count,
-    f.youtube_total_views,
-    f.youtube_total_likes,
-    f.youtube_total_comments,
+    f.video_count,
     f.news_article_count,
+    f.total_views,
+    f.total_likes,
+    f.total_comments,
     f.avg_engagement_rate,
-    f.topic_trend_score
+    f.trend_score,
+    RANK() OVER (PARTITION BY f.date_key ORDER BY f.trend_score DESC) AS daily_topic_rank
 FROM fact_topic_daily_metrics f
-JOIN dim_date d
-    ON f.date_key = d.date_key
-JOIN dim_topic t
-    ON f.topic_key = t.topic_key;
+JOIN dim_topic t ON t.topic_key = f.topic_key;
 
-CREATE VIEW vw_top_videos AS
+CREATE OR REPLACE VIEW vw_top_videos AS
 SELECT
-    d.date_key,
-    d.year,
-    d.month,
-    d.week,
+    f.date_key,
     t.topic_name,
     c.channel_name,
-    v.title,
     v.video_id,
-    v.publish_date,
+    v.video_title,
+    v.published_at,
     v.duration_seconds,
-    f.views,
-    f.likes,
-    f.comments,
+    f.view_count,
+    f.like_count,
+    f.comment_count,
     f.engagement_rate,
-    ft.topic_trend_score
+    (f.like_count + f.comment_count) AS engagement_count,
+    RANK() OVER (PARTITION BY f.date_key ORDER BY f.view_count DESC) AS daily_view_rank
 FROM fact_video_daily_metrics f
-JOIN dim_date d
-    ON f.date_key = d.date_key
-JOIN dim_topic t
-    ON f.topic_key = t.topic_key
-JOIN dim_channel c
-    ON f.channel_key = c.channel_key
-JOIN dim_video v
-    ON f.video_key = v.video_key
-LEFT JOIN fact_topic_daily_metrics ft
-    ON f.date_key = ft.date_key
-    AND f.topic_key = ft.topic_key;
+JOIN dim_video v ON v.video_key = f.video_key
+JOIN dim_channel c ON c.channel_key = f.channel_key
+JOIN dim_topic t ON t.topic_key = f.topic_key;
 
-CREATE VIEW vw_profile_recommendations AS
+CREATE OR REPLACE VIEW vw_profile_recommendations AS
 SELECT
-    d.date_key,
-    d.year,
-    d.month,
-    d.week,
-    u.profile_name,
-    u.preferred_topics,
-    u.available_time_minutes,
+    r.date_key,
+    p.persona,
+    p.business_goal,
+    p.available_time_minutes,
     t.topic_name,
     c.channel_name,
-    v.title,
     v.video_id,
+    v.video_title,
     v.duration_seconds,
-    fvd.views,
-    fvd.likes,
-    fvd.comments,
-    fvd.engagement_rate,
-    r.topic_affinity,
-    r.recommendation_score
+    f.view_count,
+    f.engagement_rate,
+    r.topical_affinity,
+    r.recommendation_score,
+    RANK() OVER (PARTITION BY r.date_key, r.profile_key ORDER BY r.recommendation_score DESC) AS recommendation_rank
 FROM fact_profile_video_recommendations r
-JOIN dim_date d
-    ON r.date_key = d.date_key
-JOIN dim_user_profile u
-    ON r.user_profile_key = u.user_profile_key
-JOIN dim_topic t
-    ON r.topic_key = t.topic_key
-JOIN dim_video v
-    ON r.video_key = v.video_key
-JOIN dim_channel c
-    ON v.channel_key = c.channel_key
-LEFT JOIN fact_video_daily_metrics fvd
-    ON r.date_key = fvd.date_key
-    AND r.video_key = fvd.video_key;
+JOIN dim_user_profile p ON p.profile_key = r.profile_key
+JOIN dim_video v ON v.video_key = r.video_key
+JOIN dim_channel c ON c.channel_key = v.channel_key
+JOIN dim_topic t ON t.topic_key = r.topic_key
+JOIN fact_video_daily_metrics f ON f.date_key = r.date_key AND f.video_key = r.video_key;
+
+CREATE OR REPLACE VIEW vw_daily_pipeline_summary AS
+SELECT
+    d.date_key,
+    COUNT(DISTINCT fv.video_key) AS videos_loaded,
+    COUNT(DISTINCT fv.channel_key) AS channels_loaded,
+    COUNT(DISTINCT fv.topic_key) AS topics_loaded,
+    SUM(fv.view_count) AS total_views,
+    SUM(fv.like_count) AS total_likes,
+    SUM(fv.comment_count) AS total_comments,
+    AVG(fv.engagement_rate) AS avg_engagement_rate
+FROM dim_date d
+LEFT JOIN fact_video_daily_metrics fv ON fv.date_key = d.date_key
+GROUP BY d.date_key;

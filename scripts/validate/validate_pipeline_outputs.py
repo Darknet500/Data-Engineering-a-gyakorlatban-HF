@@ -1,17 +1,12 @@
 from __future__ import annotations
 
-import sys
 from pathlib import Path
 
 import pandas as pd
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-
-RAW_YOUTUBE_DIR = PROJECT_ROOT / "data" / "raw" / "youtube"
-RAW_NEWS_DIR = PROJECT_ROOT / "data" / "raw" / "news"
+RAW_DIR = PROJECT_ROOT / "data" / "raw"
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
-
 
 REQUIRED_PROCESSED_FILES = [
     "dim_date.csv",
@@ -24,207 +19,98 @@ REQUIRED_PROCESSED_FILES = [
     "fact_profile_video_recommendations.csv",
 ]
 
-
-def collect_file_errors() -> list[str]:
-    errors: list[str] = []
-
-    if not list(RAW_YOUTUBE_DIR.glob("*.json")):
-        errors.append(f"No YouTube raw JSON files found in {RAW_YOUTUBE_DIR}")
-
-    if not list(RAW_NEWS_DIR.glob("*.json")):
-        errors.append(f"No NewsAPI raw JSON files found in {RAW_NEWS_DIR}")
-
-    for file_name in REQUIRED_PROCESSED_FILES:
-        file_path = PROCESSED_DIR / file_name
-
-        if not file_path.exists():
-            errors.append(f"Missing processed file: {file_path}")
-            continue
-
-        df = pd.read_csv(file_path)
-        if df.empty:
-            errors.append(f"Processed file is empty: {file_path}")
-
-    return errors
+UNIQUE_KEYS = {
+    "dim_date.csv": ["date_key"],
+    "dim_channel.csv": ["channel_key"],
+    "dim_topic.csv": ["topic_key"],
+    "dim_user_profile.csv": ["profile_key"],
+    "dim_video.csv": ["video_key"],
+    "fact_video_daily_metrics.csv": ["date_key", "video_key"],
+    "fact_topic_daily_metrics.csv": ["date_key", "topic_key"],
+    "fact_profile_video_recommendations.csv": ["date_key", "profile_key", "video_key"],
+}
 
 
-def check_unique_keys(
-    df: pd.DataFrame,
-    file_name: str,
-    key_columns: list[str],
-    errors: list[str],
-) -> None:
-    duplicate_count = int(df.duplicated(subset=key_columns).sum())
-
-    if duplicate_count > 0:
-        errors.append(
-            f"{file_name} has {duplicate_count} duplicate rows for key {key_columns}"
-        )
+def require(condition: bool, message: str) -> None:
+    if not condition:
+        raise AssertionError(message)
 
 
-def check_non_negative_metrics(
-    df: pd.DataFrame,
-    file_name: str,
-    metric_columns: list[str],
-    errors: list[str],
-) -> None:
-    for column in metric_columns:
-        if column not in df.columns:
-            errors.append(f"{file_name} is missing metric column {column}")
-            continue
-
-        negative_count = int((df[column] < 0).sum())
-
-        if negative_count > 0:
-            errors.append(
-                f"{file_name} has {negative_count} negative values in column {column}"
-            )
+def load_csv(name: str) -> pd.DataFrame:
+    path = PROCESSED_DIR / name
+    require(path.exists(), f"Missing processed output: {path}")
+    df = pd.read_csv(path)
+    require(not df.empty, f"Processed output is empty: {path}")
+    return df
 
 
-def check_foreign_keys(
-    fact_df: pd.DataFrame,
-    fact_name: str,
-    dim_df: pd.DataFrame,
-    dim_key: str,
-    errors: list[str],
-) -> None:
-    missing_keys = set(fact_df[dim_key].dropna()) - set(dim_df[dim_key].dropna())
-
-    if missing_keys:
-        preview = sorted(list(missing_keys))[:10]
-        errors.append(
-            f"{fact_name} has {len(missing_keys)} missing {dim_key} references: {preview}"
-        )
+def validate_unique_keys(tables: dict[str, pd.DataFrame]) -> None:
+    for filename, columns in UNIQUE_KEYS.items():
+        df = tables[filename]
+        duplicated = df.duplicated(subset=columns).sum()
+        require(duplicated == 0, f"{filename} has {duplicated} duplicate key rows for {columns}")
 
 
-def run_data_quality_checks(errors: list[str]) -> None:
-    fact_video = pd.read_csv(PROCESSED_DIR / "fact_video_daily_metrics.csv")
-    fact_topic = pd.read_csv(PROCESSED_DIR / "fact_topic_daily_metrics.csv")
-    fact_recommendations = pd.read_csv(
-        PROCESSED_DIR / "fact_profile_video_recommendations.csv"
-    )
-
-    dim_date = pd.read_csv(PROCESSED_DIR / "dim_date.csv")
-    dim_channel = pd.read_csv(PROCESSED_DIR / "dim_channel.csv")
-    dim_topic = pd.read_csv(PROCESSED_DIR / "dim_topic.csv")
-    dim_user_profile = pd.read_csv(PROCESSED_DIR / "dim_user_profile.csv")
-    dim_video = pd.read_csv(PROCESSED_DIR / "dim_video.csv")
-
-    check_unique_keys(dim_date, "dim_date.csv", ["date_key"], errors)
-    check_unique_keys(dim_channel, "dim_channel.csv", ["channel_key"], errors)
-    check_unique_keys(dim_channel, "dim_channel.csv", ["channel_id"], errors)
-    check_unique_keys(dim_topic, "dim_topic.csv", ["topic_key"], errors)
-    check_unique_keys(dim_topic, "dim_topic.csv", ["topic_name"], errors)
-    check_unique_keys(
-        dim_user_profile,
-        "dim_user_profile.csv",
-        ["user_profile_key"],
-        errors,
-    )
-    check_unique_keys(dim_video, "dim_video.csv", ["video_key"], errors)
-    check_unique_keys(dim_video, "dim_video.csv", ["video_id"], errors)
-
-    check_unique_keys(
-        fact_video,
-        "fact_video_daily_metrics.csv",
-        ["date_key", "video_key"],
-        errors,
-    )
-
-    check_unique_keys(
-        fact_topic,
-        "fact_topic_daily_metrics.csv",
-        ["date_key", "topic_key"],
-        errors,
-    )
-
-    check_unique_keys(
-        fact_recommendations,
-        "fact_profile_video_recommendations.csv",
-        ["date_key", "user_profile_key", "video_key"],
-        errors,
-    )
-
-    check_non_negative_metrics(
-        fact_video,
-        "fact_video_daily_metrics.csv",
-        ["views", "likes", "comments", "engagement_rate"],
-        errors,
-    )
-
-    check_non_negative_metrics(
-        fact_topic,
-        "fact_topic_daily_metrics.csv",
-        [
-            "youtube_video_count",
-            "youtube_total_views",
-            "youtube_total_likes",
-            "youtube_total_comments",
+def validate_metrics(tables: dict[str, pd.DataFrame]) -> None:
+    metric_columns = {
+        "fact_video_daily_metrics.csv": ["view_count", "like_count", "comment_count", "engagement_rate"],
+        "fact_topic_daily_metrics.csv": [
+            "video_count",
             "news_article_count",
+            "total_views",
+            "total_likes",
+            "total_comments",
             "avg_engagement_rate",
-            "topic_trend_score",
+            "trend_score",
         ],
-        errors,
-    )
+        "fact_profile_video_recommendations.csv": ["topical_affinity", "recommendation_score"],
+    }
+    for filename, columns in metric_columns.items():
+        df = tables[filename]
+        for column in columns:
+            require(column in df.columns, f"{filename} missing metric column {column}")
+            require((pd.to_numeric(df[column], errors="coerce").fillna(0) >= 0).all(), f"{filename}.{column} contains negative values")
 
-    check_non_negative_metrics(
-        fact_recommendations,
-        "fact_profile_video_recommendations.csv",
-        ["topic_affinity", "recommendation_score"],
-        errors,
-    )
 
-    check_foreign_keys(fact_video, "fact_video_daily_metrics.csv", dim_date, "date_key", errors)
-    check_foreign_keys(fact_video, "fact_video_daily_metrics.csv", dim_video, "video_key", errors)
-    check_foreign_keys(fact_video, "fact_video_daily_metrics.csv", dim_channel, "channel_key", errors)
-    check_foreign_keys(fact_video, "fact_video_daily_metrics.csv", dim_topic, "topic_key", errors)
+def validate_foreign_keys(tables: dict[str, pd.DataFrame]) -> None:
+    date_keys = set(tables["dim_date.csv"]["date_key"].astype(str))
+    video_keys = set(tables["dim_video.csv"]["video_key"])
+    channel_keys = set(tables["dim_channel.csv"]["channel_key"])
+    topic_keys = set(tables["dim_topic.csv"]["topic_key"])
+    profile_keys = set(tables["dim_user_profile.csv"]["profile_key"])
 
-    check_foreign_keys(fact_topic, "fact_topic_daily_metrics.csv", dim_date, "date_key", errors)
-    check_foreign_keys(fact_topic, "fact_topic_daily_metrics.csv", dim_topic, "topic_key", errors)
+    dim_video = tables["dim_video.csv"]
+    require(set(dim_video["channel_key"]).issubset(channel_keys), "dim_video.channel_key has missing references")
+    require(set(dim_video["topic_key"]).issubset(topic_keys), "dim_video.topic_key has missing references")
 
-    check_foreign_keys(
-        fact_recommendations,
-        "fact_profile_video_recommendations.csv",
-        dim_date,
-        "date_key",
-        errors,
-    )
-    check_foreign_keys(
-        fact_recommendations,
-        "fact_profile_video_recommendations.csv",
-        dim_user_profile,
-        "user_profile_key",
-        errors,
-    )
-    check_foreign_keys(
-        fact_recommendations,
-        "fact_profile_video_recommendations.csv",
-        dim_video,
-        "video_key",
-        errors,
-    )
-    check_foreign_keys(
-        fact_recommendations,
-        "fact_profile_video_recommendations.csv",
-        dim_topic,
-        "topic_key",
-        errors,
-    )
+    fact_video = tables["fact_video_daily_metrics.csv"]
+    require(set(fact_video["date_key"].astype(str)).issubset(date_keys), "fact_video_daily_metrics.date_key has missing references")
+    require(set(fact_video["video_key"]).issubset(video_keys), "fact_video_daily_metrics.video_key has missing references")
+    require(set(fact_video["channel_key"]).issubset(channel_keys), "fact_video_daily_metrics.channel_key has missing references")
+    require(set(fact_video["topic_key"]).issubset(topic_keys), "fact_video_daily_metrics.topic_key has missing references")
+
+    fact_topic = tables["fact_topic_daily_metrics.csv"]
+    require(set(fact_topic["date_key"].astype(str)).issubset(date_keys), "fact_topic_daily_metrics.date_key has missing references")
+    require(set(fact_topic["topic_key"]).issubset(topic_keys), "fact_topic_daily_metrics.topic_key has missing references")
+
+    recs = tables["fact_profile_video_recommendations.csv"]
+    require(set(recs["date_key"].astype(str)).issubset(date_keys), "fact_profile_video_recommendations.date_key has missing references")
+    require(set(recs["profile_key"]).issubset(profile_keys), "fact_profile_video_recommendations.profile_key has missing references")
+    require(set(recs["video_key"]).issubset(video_keys), "fact_profile_video_recommendations.video_key has missing references")
+    require(set(recs["topic_key"]).issubset(topic_keys), "fact_profile_video_recommendations.topic_key has missing references")
 
 
 def main() -> None:
-    errors = collect_file_errors()
+    youtube_files = list((RAW_DIR / "youtube").glob("*.json"))
+    news_files = list((RAW_DIR / "news").glob("*.json"))
+    require(youtube_files, "No raw YouTube JSON files found")
+    require(news_files, "No raw NewsAPI JSON files found")
 
-    if not errors:
-        run_data_quality_checks(errors)
-
-    if errors:
-        print("Pipeline validation failed:")
-        for error in errors:
-            print(f"- {error}")
-        sys.exit(1)
-
-    print("Pipeline validation passed successfully.")
+    tables = {filename: load_csv(filename) for filename in REQUIRED_PROCESSED_FILES}
+    validate_unique_keys(tables)
+    validate_metrics(tables)
+    validate_foreign_keys(tables)
+    print("Validation passed: raw files, processed CSVs, keys, metrics, and references look good.")
 
 
 if __name__ == "__main__":

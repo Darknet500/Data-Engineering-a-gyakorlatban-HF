@@ -6,115 +6,59 @@ from pathlib import Path
 import pandas as pd
 from dotenv import load_dotenv
 from sqlalchemy import create_engine, text
-from sqlalchemy.engine import Engine, URL
-
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 
-load_dotenv(PROJECT_ROOT / ".env")
-
-
 LOAD_ORDER = [
-    ("dim_date", "dim_date.csv"),
-    ("dim_channel", "dim_channel.csv"),
-    ("dim_topic", "dim_topic.csv"),
-    ("dim_user_profile", "dim_user_profile.csv"),
-    ("dim_video", "dim_video.csv"),
-    ("fact_video_daily_metrics", "fact_video_daily_metrics.csv"),
-    ("fact_topic_daily_metrics", "fact_topic_daily_metrics.csv"),
-    (
-        "fact_profile_video_recommendations",
-        "fact_profile_video_recommendations.csv",
-    ),
+    "dim_date",
+    "dim_channel",
+    "dim_topic",
+    "dim_user_profile",
+    "dim_video",
+    "fact_video_daily_metrics",
+    "fact_topic_daily_metrics",
+    "fact_profile_video_recommendations",
 ]
 
 
-def get_database_url() -> URL:
-    required_env_vars = [
-        "POSTGRES_DB",
-        "POSTGRES_USER",
-        "POSTGRES_PASSWORD",
-    ]
-
-    missing_vars = [name for name in required_env_vars if not os.getenv(name)]
-    if missing_vars:
-        raise ValueError(f"Missing PostgreSQL environment variables: {missing_vars}")
-
-    return URL.create(
-        drivername="postgresql+psycopg2",
-        username=os.getenv("POSTGRES_USER"),
-        password=os.getenv("POSTGRES_PASSWORD"),
-        host=os.getenv("POSTGRES_HOST", "localhost"),
-        port=int(os.getenv("POSTGRES_PORT", "5432")),
-        database=os.getenv("POSTGRES_DB"),
-    )
+def database_url() -> str:
+    user = os.getenv("POSTGRES_USER", "dehf")
+    password = os.getenv("POSTGRES_PASSWORD", "dehf")
+    host = os.getenv("POSTGRES_HOST", "localhost")
+    port = os.getenv("POSTGRES_PORT", "5432")
+    db = os.getenv("POSTGRES_DB", "dehf")
+    return f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{db}"
 
 
-def read_processed_csv(file_name: str) -> pd.DataFrame:
-    file_path = PROCESSED_DIR / file_name
+def read_table_csv(table_name: str) -> pd.DataFrame:
+    path = PROCESSED_DIR / f"{table_name}.csv"
+    if not path.exists():
+        raise FileNotFoundError(f"Missing processed file for {table_name}: {path}")
+    return pd.read_csv(path)
 
-    if not file_path.exists():
-        raise FileNotFoundError(f"Missing processed file: {file_path}")
 
-    df = pd.read_csv(file_path)
-
+def load_table(engine, table_name: str, df: pd.DataFrame) -> None:
     if df.empty:
-        raise ValueError(f"Processed file is empty: {file_path}")
-
-    return df
-
-
-def truncate_tables(engine: Engine) -> None:
-    truncate_sql = """
-    TRUNCATE TABLE
-        fact_profile_video_recommendations,
-        fact_topic_daily_metrics,
-        fact_video_daily_metrics,
-        dim_video,
-        dim_user_profile,
-        dim_topic,
-        dim_channel,
-        dim_date
-    RESTART IDENTITY CASCADE;
-    """
-
-    with engine.begin() as connection:
-        connection.execute(text(truncate_sql))
-
-    print("Truncated existing warehouse tables.")
-
-
-def load_table(engine: Engine, table_name: str, file_name: str) -> None:
-    df = read_processed_csv(file_name)
-
-    df.to_sql(
-        table_name,
-        engine,
-        if_exists="append",
-        index=False,
-        method="multi",
-        chunksize=1000,
-    )
-
-    print(f"Loaded {len(df)} rows into {table_name}")
+        raise ValueError(f"Refusing to load empty table: {table_name}")
+    df.to_sql(table_name, engine, if_exists="append", index=False, method="multi", chunksize=1000)
+    print(f"Loaded {len(df):>4} rows into {table_name}")
 
 
 def main() -> None:
-    print("Connecting to PostgreSQL")
-    print("DB:", os.getenv("POSTGRES_DB"))
-    print("USER:", os.getenv("POSTGRES_USER"))
-    print("HOST:", os.getenv("POSTGRES_HOST", "localhost"))
-    print("PORT:", os.getenv("POSTGRES_PORT", "5432"))
+    load_dotenv(PROJECT_ROOT / ".env")
+    engine = create_engine(database_url())
 
-    engine = create_engine(get_database_url())
+    with engine.begin() as conn:
+        tables = ", ".join(LOAD_ORDER[::-1])
+        conn.execute(text(f"TRUNCATE TABLE {tables} RESTART IDENTITY CASCADE"))
+        print("Truncated target star-schema tables")
 
-    truncate_tables(engine)
+    for table_name in LOAD_ORDER:
+        df = read_table_csv(table_name)
+        load_table(engine, table_name, df)
 
-    for table_name, file_name in LOAD_ORDER:
-        load_table(engine, table_name, file_name)
-
-    print("PostgreSQL load finished successfully.")
+    print("PostgreSQL load finished")
 
 
 if __name__ == "__main__":

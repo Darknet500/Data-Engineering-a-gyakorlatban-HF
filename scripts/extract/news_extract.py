@@ -2,68 +2,54 @@ from __future__ import annotations
 
 import json
 import os
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 import requests
 from dotenv import load_dotenv
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-OUTPUT_DIR = PROJECT_ROOT / "data" / "raw" / "news"
-
-load_dotenv(PROJECT_ROOT / ".env")
-
-NEWS_API_KEY = os.getenv("NEWS_API_KEY")
-NEWS_QUERY = os.getenv("NEWS_QUERY", "data engineering OR airflow OR python")
-NEWS_LANGUAGE = os.getenv("NEWS_LANGUAGE", "en")
-NEWS_PAGE_SIZE = int(os.getenv("NEWS_PAGE_SIZE", "50"))
+RAW_DIR = PROJECT_ROOT / "data" / "raw" / "news"
+NEWSAPI_URL = "https://newsapi.org/v2/everything"
 
 
-def extract_news(
-    query: str,
-    language: str = "en",
-    page_size: int = 50,
-) -> list[dict[str, Any]]:
-    if not NEWS_API_KEY:
-        raise ValueError("NEWS_API_KEY is missing from .env")
-
-    url = "https://newsapi.org/v2/everything"
+def fetch_news(api_key: str, query: str, page_size: int) -> dict[str, Any]:
     params = {
         "q": query,
-        "language": language,
-        "pageSize": page_size,
+        "language": "en",
         "sortBy": "publishedAt",
-        "apiKey": NEWS_API_KEY,
+        "pageSize": page_size,
+        "apiKey": api_key,
     }
-
-    response = requests.get(url, params=params, timeout=30)
+    response = requests.get(NEWSAPI_URL, params=params, timeout=60)
     response.raise_for_status()
     payload = response.json()
-
     if payload.get("status") != "ok":
-        raise RuntimeError(f"NewsAPI returned non-ok payload: {payload}")
-
-    return payload.get("articles", [])
+        raise RuntimeError(f"NewsAPI returned non-ok status: {payload}")
+    return payload
 
 
 def main() -> None:
-    run_date = datetime.now(UTC).strftime("%Y-%m-%d")
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    load_dotenv(PROJECT_ROOT / ".env")
+    api_key = os.getenv("NEWS_API_KEY")
+    if not api_key or api_key == "put_your_newsapi_key_here":
+        raise RuntimeError("NEWS_API_KEY is missing. Put a real key in .env before running the DAG.")
 
-    articles = extract_news(
-        query=NEWS_QUERY,
-        language=NEWS_LANGUAGE,
-        page_size=NEWS_PAGE_SIZE,
-    )
+    query = os.getenv("NEWS_QUERY", 'python OR "data engineering" OR "artificial intelligence"')
+    page_size = int(os.getenv("NEWS_PAGE_SIZE", "50"))
+    run_ts = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    run_date = run_ts[:10]
 
-    output_file = OUTPUT_DIR / f"{run_date}_news.json"
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
+    payload = fetch_news(api_key, query, page_size)
+    payload["source"] = "newsapi"
+    payload["query"] = query
+    payload["run_timestamp_utc"] = run_ts
 
-    with output_file.open("w", encoding="utf-8") as f:
-        json.dump(articles, f, ensure_ascii=False, indent=2)
-
-    print(f"Saved {len(articles)} articles to {output_file}")
+    output_path = RAW_DIR / f"news_{run_date}.json"
+    output_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Wrote {len(payload.get('articles', []))} NewsAPI articles to {output_path}")
 
 
 if __name__ == "__main__":

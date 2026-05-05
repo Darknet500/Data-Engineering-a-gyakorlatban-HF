@@ -2,84 +2,92 @@ from __future__ import annotations
 
 import json
 import os
-from datetime import UTC, datetime
+import re
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 from dotenv import load_dotenv
 from googleapiclient.discovery import build
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-OUTPUT_DIR = PROJECT_ROOT / "data" / "raw" / "youtube"
-
-load_dotenv(PROJECT_ROOT / ".env")
-
-YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
-YOUTUBE_TOPICS = os.getenv(
-    "YOUTUBE_TOPICS",
-    "python,data engineering,artificial intelligence",
-)
-YOUTUBE_MAX_RESULTS = int(os.getenv("YOUTUBE_MAX_RESULTS", "10"))
+RAW_DIR = PROJECT_ROOT / "data" / "raw" / "youtube"
 
 
-def get_topics() -> list[str]:
-    return [topic.strip() for topic in YOUTUBE_TOPICS.split(",") if topic.strip()]
+def safe_filename(value: str) -> str:
+    value = re.sub(r"[^A-Za-z0-9_.-]+", "_", value.strip().lower())
+    return value.strip("_") or "topic"
 
 
-def extract_youtube_videos(query: str, max_results: int = 10) -> list[dict[str, Any]]:
-    if not YOUTUBE_API_KEY:
-        raise ValueError("YOUTUBE_API_KEY is missing from .env")
+def parse_topics() -> list[str]:
+    topics_raw = os.getenv("YOUTUBE_TOPICS") or os.getenv("YOUTUBE_QUERY") or "python,data engineering,artificial intelligence"
+    return [topic.strip() for topic in topics_raw.split(",") if topic.strip()]
 
-    youtube = build("youtube", "v3", developerKey=YOUTUBE_API_KEY)
 
-    search_response = (
-        youtube.search()
-        .list(
-            q=query,
-            part="snippet",
-            type="video",
-            maxResults=max_results,
-            order="relevance",
-        )
-        .execute()
+def youtube_client(api_key: str):
+    return build("youtube", "v3", developerKey=api_key, cache_discovery=False)
+
+
+def search_video_ids(client: Any, topic: str, max_results: int) -> list[str]:
+    request = client.search().list(
+        part="id",
+        q=topic,
+        type="video",
+        order="relevance",
+        maxResults=max_results,
+        safeSearch="none",
     )
+    response = request.execute()
+    video_ids: list[str] = []
+    for item in response.get("items", []):
+        video_id = item.get("id", {}).get("videoId")
+        if video_id:
+            video_ids.append(video_id)
+    return video_ids
 
-    video_ids = [
-        item["id"]["videoId"]
-        for item in search_response.get("items", [])
-        if "id" in item and "videoId" in item["id"]
-    ]
 
+def fetch_video_details(client: Any, video_ids: list[str]) -> list[dict[str, Any]]:
     if not video_ids:
-        print(f"No videos found for topic: {query}")
         return []
-
-    videos_response = (
-        youtube.videos()
-        .list(
-            part="snippet,statistics,contentDetails",
-            id=",".join(video_ids),
-        )
-        .execute()
+    request = client.videos().list(
+        part="snippet,statistics,contentDetails",
+        id=",".join(video_ids),
+        maxResults=len(video_ids),
     )
-
-    return videos_response.get("items", [])
+    response = request.execute()
+    return response.get("items", [])
 
 
 def main() -> None:
-    run_date = datetime.now(UTC).strftime("%Y-%m-%d")
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    load_dotenv(PROJECT_ROOT / ".env")
+    api_key = os.getenv("YOUTUBE_API_KEY")
+    if not api_key or api_key == "put_your_youtube_key_here":
+        raise RuntimeError("YOUTUBE_API_KEY is missing. Put a real key in .env before running the DAG.")
 
-    for topic in get_topics():
-        videos = extract_youtube_videos(topic, YOUTUBE_MAX_RESULTS)
-        safe_topic = topic.replace(" ", "_").replace("/", "_")
-        output_file = OUTPUT_DIR / f"{run_date}_{safe_topic}.json"
+    max_results = int(os.getenv("YOUTUBE_MAX_RESULTS", "10"))
+    topics = parse_topics()
+    run_ts = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    run_date = run_ts[:10]
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
 
-        with output_file.open("w", encoding="utf-8") as f:
-            json.dump(videos, f, ensure_ascii=False, indent=2)
+    client = youtube_client(api_key)
+    total_videos = 0
+    for topic in topics:
+        video_ids = search_video_ids(client, topic, max_results)
+        videos = fetch_video_details(client, video_ids)
+        payload = {
+            "source": "youtube_data_api",
+            "topic": topic,
+            "run_timestamp_utc": run_ts,
+            "video_count": len(videos),
+            "items": videos,
+        }
+        output_path = RAW_DIR / f"youtube_{run_date}_{safe_filename(topic)}.json"
+        output_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        total_videos += len(videos)
+        print(f"Wrote {len(videos)} YouTube videos for topic='{topic}' to {output_path}")
 
-        print(f"Saved {len(videos)} videos to {output_file}")
+    print(f"YouTube extraction finished: {total_videos} videos across {len(topics)} topics")
 
 
 if __name__ == "__main__":

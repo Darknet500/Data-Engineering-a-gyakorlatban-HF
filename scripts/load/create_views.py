@@ -4,51 +4,52 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-from sqlalchemy import create_engine
-from sqlalchemy.engine import URL
-
+from sqlalchemy import create_engine, text
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-VIEWS_FILE = PROJECT_ROOT / "sql" / "views" / "analytics_views.sql"
-
-load_dotenv(PROJECT_ROOT / ".env")
+VIEWS_SQL = PROJECT_ROOT / "sql" / "views" / "analytics_views.sql"
 
 
-def get_database_url() -> URL:
-    required_env_vars = [
-        "POSTGRES_DB",
-        "POSTGRES_USER",
-        "POSTGRES_PASSWORD",
-    ]
+def database_url() -> str:
+    user = os.getenv("POSTGRES_USER", "dehf")
+    password = os.getenv("POSTGRES_PASSWORD", "dehf")
+    host = os.getenv("POSTGRES_HOST", "localhost")
+    port = os.getenv("POSTGRES_PORT", "5432")
+    db = os.getenv("POSTGRES_DB", "dehf")
+    return f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{db}"
 
-    missing_vars = [name for name in required_env_vars if not os.getenv(name)]
-    if missing_vars:
-        raise ValueError(f"Missing PostgreSQL environment variables: {missing_vars}")
 
-    return URL.create(
-        drivername="postgresql+psycopg2",
-        username=os.getenv("POSTGRES_USER"),
-        password=os.getenv("POSTGRES_PASSWORD"),
-        host=os.getenv("POSTGRES_HOST", "localhost"),
-        port=int(os.getenv("POSTGRES_PORT", "5432")),
-        database=os.getenv("POSTGRES_DB"),
-    )
+def split_sql(sql: str) -> list[str]:
+    statements: list[str] = []
+    current: list[str] = []
+    in_single_quote = False
+    for char in sql:
+        if char == "'":
+            in_single_quote = not in_single_quote
+        if char == ";" and not in_single_quote:
+            statement = "".join(current).strip()
+            if statement:
+                statements.append(statement)
+            current = []
+        else:
+            current.append(char)
+    tail = "".join(current).strip()
+    if tail:
+        statements.append(tail)
+    return statements
 
 
 def main() -> None:
-    if not VIEWS_FILE.exists():
-        raise FileNotFoundError(f"Missing SQL views file: {VIEWS_FILE}")
-
-    sql = VIEWS_FILE.read_text(encoding="utf-8")
-    statements = [statement.strip() for statement in sql.split(";") if statement.strip()]
-
-    engine = create_engine(get_database_url())
-
-    with engine.begin() as connection:
+    load_dotenv(PROJECT_ROOT / ".env")
+    if not VIEWS_SQL.exists():
+        raise FileNotFoundError(f"Missing analytics view SQL: {VIEWS_SQL}")
+    engine = create_engine(database_url())
+    sql_text = VIEWS_SQL.read_text(encoding="utf-8")
+    statements = split_sql(sql_text)
+    with engine.begin() as conn:
         for statement in statements:
-            connection.exec_driver_sql(statement)
-
-    print("Analytics views created successfully.")
+            conn.execute(text(statement))
+    print(f"Created/refreshed {len(statements)} analytics view statements from {VIEWS_SQL}")
 
 
 if __name__ == "__main__":
