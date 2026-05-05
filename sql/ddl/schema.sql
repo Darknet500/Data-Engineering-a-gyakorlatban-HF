@@ -52,12 +52,10 @@ CREATE TABLE IF NOT EXISTS fact_video_daily_metrics (
     video_key INT REFERENCES dim_video(video_key),
     channel_key INT REFERENCES dim_channel(channel_key),
     topic_key INT REFERENCES dim_topic(topic_key),
-
     views BIGINT DEFAULT 0 CHECK (views >= 0),
     likes BIGINT DEFAULT 0 CHECK (likes >= 0),
     comments BIGINT DEFAULT 0 CHECK (comments >= 0),
     engagement_rate DOUBLE PRECISION DEFAULT 0,
-
     UNIQUE (date_key, video_key)
 );
 
@@ -65,7 +63,6 @@ CREATE TABLE IF NOT EXISTS fact_topic_daily_metrics (
     fact_id SERIAL PRIMARY KEY,
     date_key DATE REFERENCES dim_date(date_key),
     topic_key INT REFERENCES dim_topic(topic_key),
-
     youtube_video_count INT DEFAULT 0 CHECK (youtube_video_count >= 0),
     youtube_total_views BIGINT DEFAULT 0 CHECK (youtube_total_views >= 0),
     youtube_total_likes BIGINT DEFAULT 0 CHECK (youtube_total_likes >= 0),
@@ -73,7 +70,6 @@ CREATE TABLE IF NOT EXISTS fact_topic_daily_metrics (
     news_article_count INT DEFAULT 0 CHECK (news_article_count >= 0),
     avg_engagement_rate DOUBLE PRECISION DEFAULT 0,
     topic_trend_score DOUBLE PRECISION DEFAULT 0,
-
     UNIQUE (date_key, topic_key)
 );
 
@@ -83,10 +79,8 @@ CREATE TABLE IF NOT EXISTS fact_profile_video_recommendations (
     user_profile_key INT REFERENCES dim_user_profile(user_profile_key),
     video_key INT REFERENCES dim_video(video_key),
     topic_key INT REFERENCES dim_topic(topic_key),
-
     topic_affinity DOUBLE PRECISION DEFAULT 0,
     recommendation_score DOUBLE PRECISION DEFAULT 0,
-
     UNIQUE (date_key, user_profile_key, video_key)
 );
 

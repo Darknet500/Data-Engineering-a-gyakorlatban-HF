@@ -127,6 +127,9 @@ def load_youtube_records() -> pd.DataFrame:
         if isinstance(videos, dict):
             videos = videos.get("items", [])
 
+        if not isinstance(videos, list):
+            continue
+
         for item in videos:
             if not isinstance(item, dict):
                 continue
@@ -232,9 +235,6 @@ def article_matches_topic(article: dict[str, Any], topic: str) -> bool:
 
 
 def load_news_topic_counts(topics: list[str]) -> pd.DataFrame:
-    """
-    Builds daily article counts by topic from NewsAPI raw JSON files.
-    """
     records: list[dict[str, Any]] = []
 
     for file_path in sorted(RAW_NEWS_DIR.glob("*.json")):
@@ -266,13 +266,11 @@ def load_news_topic_counts(topics: list[str]) -> pd.DataFrame:
             columns=["date_key", "topic_name", "news_article_count"]
         )
 
-    news_counts = (
+    return (
         pd.DataFrame(records)
         .groupby(["date_key", "topic_name"], as_index=False)
         .agg(news_article_count=("news_article_count", "sum"))
     )
-
-    return news_counts
 
 
 def profile_topic_affinity(preferred_topics: Any, topic_name: Any) -> float:

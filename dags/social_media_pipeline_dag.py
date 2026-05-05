@@ -46,6 +46,11 @@ with DAG(
         bash_command=f"python {SCRIPTS_DIR}/transform/build_star_schema.py",
     )
 
+    validate_outputs = BashOperator(
+        task_id="validate_outputs",
+        bash_command=f"python {SCRIPTS_DIR}/validate/validate_pipeline_outputs.py",
+    )
+
     upload_processed_to_minio = BashOperator(
         task_id="upload_processed_to_minio",
         bash_command=f"python {SCRIPTS_DIR}/load/upload_to_minio.py --zone processed",
@@ -61,14 +66,9 @@ with DAG(
         bash_command=f"python {SCRIPTS_DIR}/load/create_views.py",
     )
 
-    validate_outputs = BashOperator(
-        task_id="validate_outputs",
-        bash_command=f"python {SCRIPTS_DIR}/validate/validate_pipeline_outputs.py",
-    )
-
     [extract_youtube, extract_news] >> upload_raw_to_minio
     upload_raw_to_minio >> transform_star_schema
-    transform_star_schema >> upload_processed_to_minio
+    transform_star_schema >> validate_outputs
+    validate_outputs >> upload_processed_to_minio
     upload_processed_to_minio >> load_to_postgres
     load_to_postgres >> create_analytics_views
-    create_analytics_views >> validate_outputs

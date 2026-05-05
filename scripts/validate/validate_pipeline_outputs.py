@@ -25,7 +25,7 @@ REQUIRED_PROCESSED_FILES = [
 ]
 
 
-def collect_errors() -> list[str]:
+def collect_file_errors() -> list[str]:
     errors: list[str] = []
 
     if not list(RAW_YOUTUBE_DIR.glob("*.json")):
@@ -54,7 +54,7 @@ def check_unique_keys(
     key_columns: list[str],
     errors: list[str],
 ) -> None:
-    duplicate_count = df.duplicated(subset=key_columns).sum()
+    duplicate_count = int(df.duplicated(subset=key_columns).sum())
 
     if duplicate_count > 0:
         errors.append(
@@ -70,14 +70,31 @@ def check_non_negative_metrics(
 ) -> None:
     for column in metric_columns:
         if column not in df.columns:
+            errors.append(f"{file_name} is missing metric column {column}")
             continue
 
-        negative_count = (df[column] < 0).sum()
+        negative_count = int((df[column] < 0).sum())
 
         if negative_count > 0:
             errors.append(
                 f"{file_name} has {negative_count} negative values in column {column}"
             )
+
+
+def check_foreign_keys(
+    fact_df: pd.DataFrame,
+    fact_name: str,
+    dim_df: pd.DataFrame,
+    dim_key: str,
+    errors: list[str],
+) -> None:
+    missing_keys = set(fact_df[dim_key].dropna()) - set(dim_df[dim_key].dropna())
+
+    if missing_keys:
+        preview = sorted(list(missing_keys))[:10]
+        errors.append(
+            f"{fact_name} has {len(missing_keys)} missing {dim_key} references: {preview}"
+        )
 
 
 def run_data_quality_checks(errors: list[str]) -> None:
@@ -157,9 +174,46 @@ def run_data_quality_checks(errors: list[str]) -> None:
         errors,
     )
 
+    check_foreign_keys(fact_video, "fact_video_daily_metrics.csv", dim_date, "date_key", errors)
+    check_foreign_keys(fact_video, "fact_video_daily_metrics.csv", dim_video, "video_key", errors)
+    check_foreign_keys(fact_video, "fact_video_daily_metrics.csv", dim_channel, "channel_key", errors)
+    check_foreign_keys(fact_video, "fact_video_daily_metrics.csv", dim_topic, "topic_key", errors)
+
+    check_foreign_keys(fact_topic, "fact_topic_daily_metrics.csv", dim_date, "date_key", errors)
+    check_foreign_keys(fact_topic, "fact_topic_daily_metrics.csv", dim_topic, "topic_key", errors)
+
+    check_foreign_keys(
+        fact_recommendations,
+        "fact_profile_video_recommendations.csv",
+        dim_date,
+        "date_key",
+        errors,
+    )
+    check_foreign_keys(
+        fact_recommendations,
+        "fact_profile_video_recommendations.csv",
+        dim_user_profile,
+        "user_profile_key",
+        errors,
+    )
+    check_foreign_keys(
+        fact_recommendations,
+        "fact_profile_video_recommendations.csv",
+        dim_video,
+        "video_key",
+        errors,
+    )
+    check_foreign_keys(
+        fact_recommendations,
+        "fact_profile_video_recommendations.csv",
+        dim_topic,
+        "topic_key",
+        errors,
+    )
+
 
 def main() -> None:
-    errors = collect_errors()
+    errors = collect_file_errors()
 
     if not errors:
         run_data_quality_checks(errors)

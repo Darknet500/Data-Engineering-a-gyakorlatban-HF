@@ -40,11 +40,13 @@ def main() -> None:
         raise FileNotFoundError(f"Missing SQL views file: {VIEWS_FILE}")
 
     sql = VIEWS_FILE.read_text(encoding="utf-8")
+    statements = [statement.strip() for statement in sql.split(";") if statement.strip()]
 
     engine = create_engine(get_database_url())
 
     with engine.begin() as connection:
-        connection.exec_driver_sql(sql)
+        for statement in statements:
+            connection.exec_driver_sql(statement)
 
     print("Analytics views created successfully.")
 

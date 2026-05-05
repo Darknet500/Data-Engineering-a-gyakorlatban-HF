@@ -6,7 +6,7 @@ from pathlib import Path
 import pandas as pd
 from dotenv import load_dotenv
 from sqlalchemy import create_engine, text
-from sqlalchemy.engine import URL, Engine
+from sqlalchemy.engine import Engine, URL
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]

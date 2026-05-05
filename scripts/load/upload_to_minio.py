@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import argparse
 import os
 from pathlib import Path
@@ -32,10 +34,9 @@ def get_minio_client():
     )
 
 
-def ensure_bucket(client, bucket_name):
+def ensure_bucket(client, bucket_name: str) -> None:
     existing_buckets = [
-        bucket["Name"]
-        for bucket in client.list_buckets().get("Buckets", [])
+        bucket["Name"] for bucket in client.list_buckets().get("Buckets", [])
     ]
 
     if bucket_name not in existing_buckets:
@@ -43,7 +44,7 @@ def ensure_bucket(client, bucket_name):
         print(f"Created bucket: {bucket_name}")
 
 
-def upload_directory(client, local_dir: Path, bucket_name: str):
+def upload_directory(client, local_dir: Path, bucket_name: str) -> None:
     if not local_dir.exists():
         print(f"Directory does not exist, skipping: {local_dir}")
         return
@@ -54,19 +55,17 @@ def upload_directory(client, local_dir: Path, bucket_name: str):
 
     for file_path in files:
         object_key = file_path.relative_to(local_dir).as_posix()
-
         client.upload_file(
             Filename=str(file_path),
             Bucket=bucket_name,
             Key=object_key,
         )
-
         print(f"Uploaded {file_path} to s3://{bucket_name}/{object_key}")
 
     print(f"Uploaded {len(files)} files to bucket {bucket_name}")
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--zone",
