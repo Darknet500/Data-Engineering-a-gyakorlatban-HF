@@ -14,23 +14,23 @@ End-to-end batch data engineering pipeline that ingests **YouTube Data API** and
 │  YouTube Data    │  │    NewsAPI       │  │  user_profiles   │
 │  API  (REST)     │  │   (REST API)     │  │    (CSV file)    │
 └────────┬─────────┘  └────────┬─────────┘  └────────┬─────────┘
-         │                     │                      │
-         └──────────┬──────────┘                      │
-                    ▼                                  │
-          ┌─────────────────┐                         │
-          │  Landing Zone   │                         │
-          │  MinIO  "raw"   │  ← JSON files           │
-          └────────┬────────┘                         │
-                   │                                  │
-                   ▼                                  │
-          ┌──────────────────────────────────────┐    │
-          │   Pandas Transform (build_star_schema)│◄───┘
-          │   • null handling / type coercion     │
-          │   • engagement_rate calculation       │
-          │   • news mention counting             │
-          │   • trend_score aggregation           │
-          │   • recommendation scoring            │
-          └───────────────┬──────────────────────┘
+         │                     │                     │
+         └──────────┬──────────┘                     │
+                    ▼                                │
+          ┌─────────────────┐                        │
+          │  Landing Zone   │                        │
+          │  MinIO  "raw"   │  ← JSON files          │
+          └────────┬────────┘                        │
+                   │                                 │
+                   ▼                                 │
+          ┌─────────────────────────────────────┐    │
+          │ Pandas Transform (build_star_schema)│◄───┘
+          │ • null handling / type coercion     │
+          │ • engagement_rate calculation       │
+          │ • news mention counting             │
+          │ • trend_score aggregation           │
+          │ • recommendation scoring            │
+          └───────────────┬─────────────────────┘
                           │
              ┌────────────┴────────────┐
              ▼                         ▼
@@ -41,8 +41,8 @@ End-to-end batch data engineering pipeline that ingests **YouTube Data API** and
                              └──────────┬───────────┘
                                         │
                              ┌──────────▼───────────┐
-                             │  SQL Analytical Views │
-                             │  + Metabase Dashboard │
+                             │ SQL Analytical Views │
+                             │ + Metabase Dashboard │
                              └──────────────────────┘
 
                    All steps orchestrated by Apache Airflow
