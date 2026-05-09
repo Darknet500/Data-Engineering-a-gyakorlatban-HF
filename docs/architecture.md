@@ -175,6 +175,8 @@ extract_news ─────┘         │
                              ▼
                    create_analytics_views
 ```
+![**Taskok sorrendje és függőségei:**](taskOrder.png)
+
 
 **Idempotencia:** A `load_to_postgres.py` az összes ténytáblát és dimenziótáblát `TRUNCATE … RESTART IDENTITY CASCADE` utasítással üríti a betöltés előtt, így a DAG újrafuttatva ugyanazt az állapotot produkálja.
 
