@@ -155,26 +155,6 @@ A `build_star_schema.py` szkript a következő lépéseket hajtja végre:
 A `social_media_trend_pipeline` DAG napi ütemezéssel (`@daily`) fut, `catchup=False` beállítással (tehát nem fut vissza a múltba). Az összes task `BashOperator`-ral hívja meg a Python szkripteket, amelyek a `/opt/airflow/scripts/` könyvtárból töltődnek be.
 
 **Taskok sorrendje és függőségei:**
-
-```
-extract_youtube ──┐
-                  ├──► upload_raw_to_minio
-extract_news ─────┘         │
-                             ▼
-                    transform_star_schema
-                             │
-                             ▼
-                      validate_outputs
-                             │
-                             ▼
-                  upload_processed_to_minio
-                             │
-                             ▼
-                      load_to_postgres
-                             │
-                             ▼
-                   create_analytics_views
-```
 ![**Taskok sorrendje és függőségei:**](taskOrder.png)
 
 
