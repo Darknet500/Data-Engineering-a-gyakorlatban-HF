@@ -133,6 +133,7 @@ dim_user_profile ──────────► fact_profile_video_recommenda
 dim_video ─────────────────┘
 dim_topic ─────────────────┘
 ```
+![ER Diagram](er_diagram.png)
 
 ### 2.4 Aggregációk és adattisztítás
 
