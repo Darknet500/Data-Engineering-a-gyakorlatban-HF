@@ -2,3 +2,7 @@ requests
 boto3
 psycopg2-binary
 python-dotenv
+python-dotenv
+pandas
+sqlalchemy
+google-api-python-client

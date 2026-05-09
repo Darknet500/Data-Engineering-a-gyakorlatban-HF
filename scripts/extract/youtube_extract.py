@@ -58,18 +58,87 @@ def fetch_video_details(client: Any, video_ids: list[str]) -> list[dict[str, Any
     return response.get("items", [])
 
 
+DEMO_ITEMS_PER_TOPIC = [
+    {
+        "id": "demo_video_{topic}_1",
+        "snippet": {
+            "title": "Demo: Introduction to {Topic}",
+            "description": "Synthetic demo record – no real API call was made.",
+            "publishedAt": "{date}T09:00:00Z",
+            "channelId": "demo_channel_{topic}",
+            "channelTitle": "Demo {Topic} Channel",
+        },
+        "statistics": {"viewCount": "1500", "likeCount": "120", "commentCount": "18"},
+        "contentDetails": {"duration": "PT14M00S"},
+    },
+    {
+        "id": "demo_video_{topic}_2",
+        "snippet": {
+            "title": "Demo: Advanced {Topic} Techniques",
+            "description": "Synthetic demo record – no real API call was made.",
+            "publishedAt": "{date}T11:00:00Z",
+            "channelId": "demo_channel_{topic}",
+            "channelTitle": "Demo {Topic} Channel",
+        },
+        "statistics": {"viewCount": "800", "likeCount": "60", "commentCount": "9"},
+        "contentDetails": {"duration": "PT20M30S"},
+    },
+]
+
+
+def _render_demo_items(topic: str, run_date: str) -> list[dict]:
+    slug = safe_filename(topic)
+    title = topic.title()
+    result = []
+    for template in DEMO_ITEMS_PER_TOPIC:
+        item = json.loads(
+            json.dumps(template)
+            .replace("{topic}", slug)
+            .replace("{Topic}", title)
+            .replace("{date}", run_date)
+        )
+        result.append(item)
+    return result
+
+
+def write_demo_data(topics: list[str], run_ts: str, run_date: str) -> None:
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
+    for topic in topics:
+        items = _render_demo_items(topic, run_date)
+        payload = {
+            "source": "demo_mode",
+            "topic": topic,
+            "run_timestamp_utc": run_ts,
+            "video_count": len(items),
+            "items": items,
+        }
+        output_path = RAW_DIR / f"youtube_{run_date}_{safe_filename(topic)}.json"
+        output_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"[DEMO] Wrote {len(items)} synthetic videos for topic='{topic}' to {output_path}")
+    print(f"[DEMO] YouTube demo extraction finished: {len(topics) * len(DEMO_ITEMS_PER_TOPIC)} videos across {len(topics)} topics")
+
+
+
+
 def main() -> None:
     load_dotenv(PROJECT_ROOT / ".env")
-    api_key = os.getenv("YOUTUBE_API_KEY")
-    if not api_key or api_key == "put_your_youtube_key_here":
-        raise RuntimeError("YOUTUBE_API_KEY is missing. Put a real key in .env before running the DAG.")
 
-    max_results = int(os.getenv("YOUTUBE_MAX_RESULTS", "10"))
-    topics = parse_topics()
     run_ts = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     run_date = run_ts[:10]
+    topics = parse_topics()
+
+    if os.getenv("DEMO_MODE", "false").lower() == "true":
+        write_demo_data(topics, run_ts, run_date)
+        return
+
+    api_key = os.getenv("YOUTUBE_API_KEY")
+    if not api_key or api_key == "put_your_youtube_key_here":
+        raise RuntimeError("YOUTUBE_API_KEY is missing. Put a real key in .env or set DEMO_MODE=true.")
+
+    max_results = int(os.getenv("YOUTUBE_MAX_RESULTS", "10"))
     RAW_DIR.mkdir(parents=True, exist_ok=True)
 
+    client = youtube_client(api_key)
     client = youtube_client(api_key)
     total_videos = 0
     for topic in topics:
