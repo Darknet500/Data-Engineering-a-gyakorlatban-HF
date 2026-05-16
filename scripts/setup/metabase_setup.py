@@ -1,19 +1,9 @@
-"""
-Metabase automated provisioning script.
-
-Runs once after Metabase starts to:
-  1. Complete the first-time setup wizard (create admin user)
-  2. Add the PostgreSQL warehouse as a database connection
-  3. Create four analytical questions (one per SQL view)
-  4. Create a dashboard and place all four questions on it
-"""
-
 import os
 import sys
 import time
 import requests
 
-# ── Config from environment ────────────────────────────────────────────────────
+# ── Config from environment 
 METABASE_URL = os.getenv("METABASE_URL", "http://metabase:3000")
 ADMIN_EMAIL = os.getenv("METABASE_ADMIN_EMAIL", "admin@dehf.local")
 ADMIN_PASSWORD = os.getenv("METABASE_ADMIN_PASSWORD", "Admin1234!")
@@ -25,7 +15,6 @@ PG_DB = os.getenv("POSTGRES_DB", "dehf")
 PG_USER = os.getenv("POSTGRES_USER", "dehf")
 PG_PASSWORD = os.getenv("POSTGRES_PASSWORD", "dehf")
 
-# ── Questions to create (name, SQL, display type, visualization settings) ──────
 QUESTIONS = [
     {
         "name": "Topic Trends – Daily Rankings",
@@ -130,7 +119,7 @@ CARD_LAYOUT = [
 ]
 
 
-# ── Helpers ────────────────────────────────────────────────────────────────────
+# ── Helpers 
 
 def wait_for_metabase(timeout: int = 180) -> None:
     print(f"Waiting for Metabase at {METABASE_URL} …")
