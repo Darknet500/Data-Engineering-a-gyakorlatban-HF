@@ -1,7 +1,5 @@
 # Technikai Dokumentáció – Social Media Trend Pipeline
 
-**Hallgató:** Katona Benedek (LNU506)
-
 ---
 
 ## 1. Architektúra és tervezési döntések
