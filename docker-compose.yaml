@@ -150,6 +150,35 @@ services:
       - metabase_data:/metabase-data
     environment:
       MB_DB_FILE: /metabase-data/metabase.db
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:3000/api/health | grep -q '\"status\":\"ok\"'"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+
+  metabase-init:
+    image: python:3.11-slim
+    container_name: metabase_init
+    depends_on:
+      metabase:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      METABASE_URL: ${METABASE_URL:-http://metabase:3000}
+      METABASE_ADMIN_EMAIL: ${METABASE_ADMIN_EMAIL:-admin@dehf.local}
+      METABASE_ADMIN_PASSWORD: ${METABASE_ADMIN_PASSWORD:-Admin1234!}
+      METABASE_SITE_NAME: ${METABASE_SITE_NAME:-DEHF Analytics}
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+    volumes:
+      - ./scripts:/scripts
+    command: >
+      bash -c "pip install requests --quiet &&
+               python /scripts/setup/metabase_setup.py"
 
 volumes:
   postgres_data:
