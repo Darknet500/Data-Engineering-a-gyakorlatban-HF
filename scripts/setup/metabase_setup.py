@@ -155,7 +155,15 @@ def initial_setup(token: str) -> str:
         },
         "prefs": {"site_name": SITE_NAME, "allow_tracking": False},
     }
-    r = requests.post(f"{METABASE_URL}/api/setup", json=payload, timeout=30)
+    # Origin header is required by Metabase v0.49 to allow remote setup calls.
+    headers = {"Origin": METABASE_URL, "Content-Type": "application/json"}
+    r = requests.post(f"{METABASE_URL}/api/setup", json=payload, headers=headers, timeout=30)
+    if r.status_code == 403:
+        print(
+            "WARNING: /api/setup returned 403 — Metabase may already be set up "
+            "or your version blocks remote setup. Falling back to login …"
+        )
+        return login()
     r.raise_for_status()
     return r.json()["id"]
 
