@@ -1,7 +1,5 @@
 # Technikai Dokumentáció – Social Media Trend Pipeline
 
-**Hallgató:** Katona Benedek (LNU506)
-
 ---
 
 ## 1. Architektúra és tervezési döntések
@@ -219,6 +217,7 @@ FROM vw_topic_trends
 WHERE date_key = CURRENT_DATE
 ORDER BY daily_topic_rank;
 ```
+![][topTopics]
 
 **2. lekérdezés – Legjobb engagement-arányú videók (elmúlt 7 nap):**
 ```sql
@@ -229,7 +228,7 @@ WHERE date_key >= CURRENT_DATE - INTERVAL '7 days'
 ORDER BY engagement_rate DESC
 LIMIT 10;
 ```
-
+![][bestEngagment]
 **3. lekérdezés – Személyre szabott top-3 ajánló profilonként:**
 ```sql
 SELECT persona, topic_name, video_title, duration_seconds,
@@ -238,7 +237,7 @@ FROM vw_profile_recommendations
 WHERE date_key = CURRENT_DATE AND recommendation_rank <= 3
 ORDER BY persona, recommendation_rank;
 ```
-
+![][bestPerPerson]
 ---
 
 ## 4. Adatkiszolgálás – Metabase dashboard
