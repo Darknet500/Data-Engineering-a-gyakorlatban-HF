@@ -3,7 +3,7 @@
 **Katona Benedek – LNU506**
 Data Engineering a Gyakorlatban – Opcionális Házi Feladat
 
-End-to-end batch data engineering pipeline that ingests **YouTube Data API** and **NewsAPI** data daily, transforms it into a star-schema data warehouse in PostgreSQL, stores raw and processed artefacts in MinIO (S3-compatible), and serves analytical results via SQL views and a Metabase dashboard. The entire stack runs locally through **Docker Compose**.
+End-to-end batch data engineering pipeline that ingests **YouTube Data API** and **NewsAPI** data daily, transforms it into a star-schema data warehouse in PostgreSQL, stores raw and processed artefacts in MinIO (S3-compatible), and serves analytical results via SQL views and an auto-provisioned Metabase dashboard. The entire stack runs locally through **Docker Compose**.
 
 ---
 
@@ -14,17 +14,17 @@ End-to-end batch data engineering pipeline that ingests **YouTube Data API** and
 │  YouTube Data    │  │    NewsAPI       │  │  user_profiles   │
 │  API  (REST)     │  │   (REST API)     │  │    (CSV file)    │
 └────────┬─────────┘  └────────┬─────────┘  └────────┬─────────┘
-         │                     │                     │
-         └──────────┬──────────┘                     │
-                    ▼                                │
-          ┌─────────────────┐                        │
-          │  Landing Zone   │                        │
-          │  MinIO  "raw"   │  ← JSON files          │
-          └────────┬────────┘                        │
-                   │                                 │
-                   ▼                                 │
-          ┌─────────────────────────────────────┐    │
-          │ Pandas Transform (build_star_schema)│◄───┘
+         │                     │                      │
+         └──────────┬──────────┘                      │
+                    ▼                                 │
+          ┌─────────────────┐                         │
+          │  Landing Zone   │                         │
+          │  MinIO  "raw"   │  ← JSON files           │
+          └────────┬────────┘                         │
+                   │                                  │
+                   ▼                                  │
+          ┌─────────────────────────────────────┐     │
+          │ Pandas Transform (build_star_schema)│◄────┘
           │ • null handling / type coercion     │
           │ • engagement_rate calculation       │
           │ • news mention counting             │
@@ -43,6 +43,7 @@ End-to-end batch data engineering pipeline that ingests **YouTube Data API** and
                              ┌──────────▼───────────┐
                              │ SQL Analytical Views │
                              │ + Metabase Dashboard │
+                             │  (auto-provisioned)  │
                              └──────────────────────┘
 
                    All steps orchestrated by Apache Airflow
@@ -71,7 +72,7 @@ End-to-end batch data engineering pipeline that ingests **YouTube Data API** and
 | Transformation | Pandas |
 | Landing zone | MinIO (S3-compatible) |
 | Data warehouse | PostgreSQL 15 |
-| BI dashboard | Metabase |
+| BI dashboard | Metabase v0.49.10 (auto-provisioned) |
 | Infrastructure | Docker Compose |
 
 ---
@@ -110,7 +111,7 @@ DEMO_MODE=true
 docker compose up --build -d
 ```
 
-This starts: PostgreSQL, MinIO (with bucket creation), Airflow (init + webserver + scheduler), Metabase.
+This starts: PostgreSQL, MinIO (with bucket creation), Airflow (init + webserver + scheduler), Metabase, and the Metabase auto-provisioning init container.
 
 First-time build takes a few minutes because the Airflow image is compiled with all Python dependencies.
 
@@ -120,7 +121,7 @@ First-time build takes a few minutes because the Airflow image is compiled with 
 docker compose ps
 ```
 
-All containers should show `healthy` or `running`. Typically ready within 60–90 seconds.
+All containers should show `healthy` or `running`. The `metabase_init` container will exit with code 0 once provisioning is complete (~2 minutes after startup).
 
 ### 4. Trigger the pipeline
 
@@ -142,9 +143,144 @@ extract_news ─────┘         ──► validate_outputs ──► upl
 ### 5. Explore the data
 
 **Metabase** – http://localhost:3000
-Initial setup wizard runs on first visit. Connect to PostgreSQL:
-- Host: `postgres`, Port: `5432`, Database: `dehf`, User: `dehf`, Password: `dehf`
+
+Log in with the credentials from your `.env` (`METABASE_ADMIN_EMAIL` / `METABASE_ADMIN_PASSWORD`). The **Social Media Analytics** dashboard is pre-built automatically by the `metabase-init` container — no manual setup required.
+
+> **First run only:** if the `metabase_data` volume is brand-new, `metabase-init` completes the setup wizard programmatically. If Metabase was previously set up manually, it logs in with the existing credentials instead.
 
 **MinIO Console** – http://localhost:9001 (login: `minioadmin` / `minioadmin`)
 
 **PostgreSQL direct** (from host):
+```bash
+psql -h localhost -p 5432 -U dehf -d dehf
+```
+
+---
+
+## Analytical Queries
+
+Three documented queries against the star schema / SQL views:
+
+### Query 1 – Top trending topics today
+
+Ranks every topic by its composite trend score (video activity + news coverage + engagement).
+
+```sql
+SELECT
+    topic_name,
+    video_count,
+    news_article_count,
+    ROUND(avg_engagement_rate::numeric, 4)  AS avg_engagement,
+    trend_score,
+    daily_topic_rank
+FROM vw_topic_trends
+WHERE date_key = CURRENT_DATE
+ORDER BY daily_topic_rank;
+```
+
+| topic_name | video_count | news_article_count | avg_engagement | trend_score | daily_topic_rank |
+|---|---|---|---|---|---|
+| artificial intelligence | 2 | 2 | 0.0312 | 10.12 | 1 |
+| data engineering | 2 | 3 | 0.0280 | 10.08 | 2 |
+| python | 2 | 2 | 0.0145 | 9.45 | 3 |
+
+---
+
+### Query 2 – Top 10 videos by engagement rate (last 7 days)
+
+Finds the best-performing videos regardless of raw view count — useful for spotting high-quality niche content.
+
+```sql
+SELECT
+    date_key,
+    topic_name,
+    channel_name,
+    video_title,
+    view_count,
+    ROUND(engagement_rate::numeric, 4) AS engagement_rate,
+    daily_view_rank
+FROM vw_top_videos
+WHERE date_key >= CURRENT_DATE - INTERVAL '7 days'
+ORDER BY engagement_rate DESC
+LIMIT 10;
+```
+
+| date_key | topic_name | channel_name | video_title | view_count | engagement_rate | daily_view_rank |
+|---|---|---|---|---|---|---|
+| 2026-05-16 | data engineering | Demo Channel | Demo: Introduction to Data Engineering | 125 000 | 0.0520 | 3 |
+| 2026-05-16 | python | Demo Channel | Demo: Introduction to Python | 98 000 | 0.0480 | 5 |
+
+---
+
+### Query 3 – Personalised top-3 recommendations per user persona
+
+Shows the highest-scoring video recommendation for each of the three user profiles, with the score breakdown visible through supporting columns.
+
+```sql
+SELECT
+    persona,
+    business_goal,
+    topic_name,
+    video_title,
+    duration_seconds,
+    view_count,
+    ROUND(engagement_rate::numeric, 4)      AS engagement_rate,
+    ROUND(recommendation_score::numeric, 1) AS recommendation_score,
+    recommendation_rank
+FROM vw_profile_recommendations
+WHERE date_key = CURRENT_DATE
+  AND recommendation_rank <= 3
+ORDER BY persona, recommendation_rank;
+```
+
+| persona | business_goal | topic_name | video_title | recommendation_score | recommendation_rank |
+|---|---|---|---|---|---|
+| Junior Data Engineer | Learn pipeline design | data engineering | Demo: Introduction to Data Engineering | 82.5 | 1 |
+| Marketing Analyst | Content strategy | python | Demo: Introduction to Python | 74.0 | 1 |
+| ML Startup Founder | Stay current on AI | artificial intelligence | Demo: Advanced Artificial Intelligence | 91.2 | 1 |
+
+---
+
+## Project Structure
+
+```
+├── dags/
+│   └── social_media_pipeline_dag.py   # Airflow DAG (8 tasks, @daily)
+├── scripts/
+│   ├── extract/
+│   │   ├── youtube_extract.py         # YouTube Data API v3 + demo mode
+│   │   └── news_extract.py            # NewsAPI + demo mode
+│   ├── transform/
+│   │   └── build_star_schema.py       # Pandas: clean, aggregate, build schema
+│   ├── load/
+│   │   ├── load_to_postgres.py        # SQLAlchemy → PostgreSQL
+│   │   ├── create_views.py            # CREATE OR REPLACE VIEW
+│   │   └── upload_to_minio.py         # MinIO S3 upload
+│   ├── validate/
+│   │   └── validate_pipeline_outputs.py  # Referential integrity checks
+│   └── setup/
+│       └── metabase_setup.py          # Metabase auto-provisioning via REST API
+├── sql/
+│   ├── ddl/schema.sql                 # Table definitions + indexes
+│   └── views/analytics_views.sql     # 4 analytical SQL views
+├── data/
+│   ├── input/user_profiles.csv        # Static user persona definitions
+│   ├── raw/                           # Landing zone (YouTube + News JSON)
+│   └── processed/                     # Transformed CSVs
+├── docker/airflow/Dockerfile
+├── docker-compose.yaml
+├── .env.example
+└── docs/
+    ├── architecture.md
+    ├── ER-diagram.png
+    └── taskOrder.png
+```
+
+---
+
+## Reproducibility notes
+
+- **No hardcoded secrets** – all credentials live in `.env` (gitignored); `.env.example` provides the full template.
+- **Idempotent pipeline** – `TRUNCATE … RESTART IDENTITY CASCADE` before every load; re-running the DAG produces the same result.
+- **Demo mode** – set `DEMO_MODE=true` in `.env` to run the full pipeline with synthetic data and no external API keys.
+- **Auto-provisioned Metabase** – `metabase-init` container wires up the DB connection and dashboard on first launch; no manual wizard required.
