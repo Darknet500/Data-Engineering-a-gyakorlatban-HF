@@ -217,7 +217,7 @@ FROM vw_topic_trends
 WHERE date_key = CURRENT_DATE
 ORDER BY daily_topic_rank;
 ```
-![][topTopics]
+![Top trending topics query result](topTopics.png)
 
 **2. lekérdezés – Legjobb engagement-arányú videók (elmúlt 7 nap):**
 ```sql
@@ -228,7 +228,8 @@ WHERE date_key >= CURRENT_DATE - INTERVAL '7 days'
 ORDER BY engagement_rate DESC
 LIMIT 10;
 ```
-![][bestEngagment]
+![Best engagement rate videos query result](bestEngagment.png)
+
 **3. lekérdezés – Személyre szabott top-3 ajánló profilonként:**
 ```sql
 SELECT persona, topic_name, video_title, duration_seconds,
@@ -237,7 +238,8 @@ FROM vw_profile_recommendations
 WHERE date_key = CURRENT_DATE AND recommendation_rank <= 3
 ORDER BY persona, recommendation_rank;
 ```
-![][bestPerPerson]
+![Top 3 recommendations per persona query result](bestPerPerson.png)
+
 ---
 
 ## 4. Adatkiszolgálás – Metabase dashboard
